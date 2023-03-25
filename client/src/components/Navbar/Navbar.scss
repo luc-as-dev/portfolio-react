@@ -1,0 +1,84 @@
+.navbar {
+  position: sticky;
+  
+  top: var(--navbar-top);
+  width: 100%;
+  
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--app-bg);
+    
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px 8px 0 0;
+
+    &-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+
+      gap: 8px;
+
+      &-symbol {
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+        height: 16px;
+        width: 16px;
+        border-radius: 4px;
+        
+        &.one {
+          fill: #0e4429;
+        }
+        &.two {
+          fill: #006d32;
+        }
+        &.three {
+          fill: #26a641;
+        }
+        &.four {
+          fill: #39d353;
+        }
+      }
+
+      &-text {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text);
+      }
+    }
+
+    &-items {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 8px;
+
+      &-item {
+        cursor: pointer;
+        color: var(--text-dimmed);
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 4px;
+      }
+
+      &-item.active {
+        color: var(--text);
+      }
+    }
+  }
+
+  &-eraser {
+    position: fixed;
+    z-index: -1;
+
+    background: var(--bg);
+
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(var(--navbar-top) + 10px);
+  }
+}
