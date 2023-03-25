@@ -28,19 +28,24 @@
         height: 16px;
         width: 16px;
         border-radius: 4px;
-        
-        &.one {
-          fill: #0e4429;
-        }
-        &.two {
-          fill: #006d32;
-        }
-        &.three {
-          fill: #26a641;
-        }
-        &.four {
-          fill: #39d353;
-        }
+
+        &-fill {
+          width: 16px;
+          height: 16px;
+          
+          &.nr1 {
+            fill: #0e4429;
+          }
+          &.nr2 {
+            fill: #006d32;
+          }
+          &.nr3 {
+            fill: #26a641;
+          }
+          &.nr4 {
+            fill: #39d353;
+          }
+        } 
       }
 
       &-text {
@@ -80,5 +85,19 @@
     left: 0;
     width: 100vw;
     height: calc(var(--navbar-top) + 10px);
+  }
+}
+
+@media (max-width: 440px) {
+ .navbar {
+    &-inner {
+      &-logo {
+        &-symbol {
+          &.nr1, &.nr2, &.nr3{
+            display: none;
+          }          
+        }
+      }
+    }
   }
 }

@@ -7,41 +7,17 @@ export default function Navbar({}: Props) {
     <div className="navbar">
       <div className="navbar-inner">
         <a className="navbar-inner-logo" href="https://github.com/luc-as-dev">
-          <svg width="16" height="16">
-            <rect
-              width="16"
-              height="16"
-              rx="3"
-              ry="3"
-              className="navbar-inner-logo-symbol one"
-            ></rect>
+          <svg className="navbar-inner-logo-symbol nr1">
+            <rect className="navbar-inner-logo-symbol-fill nr1"></rect>
           </svg>
-          <svg width="16" height="16">
-            <rect
-              width="16"
-              height="16"
-              rx="3"
-              ry="3"
-              className="navbar-inner-logo-symbol two"
-            ></rect>
+          <svg className="navbar-inner-logo-symbol nr2">
+            <rect className="navbar-inner-logo-symbol-fill nr2"></rect>
           </svg>
-          <svg width="16" height="16">
-            <rect
-              width="16"
-              height="16"
-              rx="3"
-              ry="3"
-              className="navbar-inner-logo-symbol three"
-            ></rect>
+          <svg className="navbar-inner-logo-symbol nr3">
+            <rect className="navbar-inner-logo-symbol-fill nr3"></rect>
           </svg>
-          <svg width="16" height="16">
-            <rect
-              width="16"
-              height="16"
-              rx="3"
-              ry="3"
-              className="navbar-inner-logo-symbol four"
-            ></rect>
+          <svg className="navbar-inner-logo-symbol nr4">
+            <rect className="navbar-inner-logo-symbol-fill nr4"></rect>
           </svg>
           <h3 className="navbar-inner-logo-text">luc-as-dev</h3>
         </a>
