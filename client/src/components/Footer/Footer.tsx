@@ -1,5 +1,6 @@
+import AppCard from "../UI/AppCard/AppCard";
 import "./Footer.scss";
 
 export default function Footer() {
-  return <div className="footer"></div>;
+  return <AppCard className="footer"></AppCard>;
 }

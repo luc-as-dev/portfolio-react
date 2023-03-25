@@ -1,12 +1,13 @@
 import "./App.scss";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
+import AppCard from "./components/UI/AppCard/AppCard";
 
 export default function App() {
   return (
     <div className="app">
       <Navbar />
-      <div className="app-content">
+      <AppCard className="app-content">
         <div
           style={{
             background: "orange",
@@ -43,7 +44,7 @@ export default function App() {
         <div
           style={{ background: "cyan", height: "200px", marginBottom: "20px" }}
         ></div>
-      </div>
+      </AppCard>
       <Footer />
     </div>
   );
