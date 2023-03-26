@@ -101,3 +101,15 @@
     }
   }
 }
+
+@media (max-width: 360px) {
+ .navbar {
+    &-inner {
+      &-logo {
+        &-text {
+          display: none;        
+        }
+      }
+    }
+  }
+}
