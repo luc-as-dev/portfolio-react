@@ -10,6 +10,7 @@ export default function Footer() {
           Quiz Multiplayer Game
         </a>
         <a href="https://luc-as-dev-kanban-board.netlify.app/">Kanban Board</a>
+        <a href="https://lucaskarlsson.netlify.app/">Portfolio</a>
       </div>
       <div className="footer-column">
         <h4 className="footer-column-title">Repositories</h4>
@@ -17,11 +18,17 @@ export default function Footer() {
           Quiz Multiplayer Game
         </a>
         <a href="https://github.com/luc-as-dev/kanban-board">Kanban Board</a>
+        <a href="https://github.com/luc-as-dev/portfolio-react">Portfolio</a>
       </div>
       <div className="footer-column">
         <h4 className="footer-column-title">Contact</h4>
-        <p>Email Lucas.Karlsson@post.com</p>
-        <p>Call +46 72 226 80 91</p>
+        <p>
+          Email{" "}
+          <a href="mailto:lucas.karlsson@post.com">Lucas.Karlsson@post.com</a>
+        </p>
+        <p>
+          Call <a href="tel:+46722268091">+46 72 226 80 91</a>
+        </p>
         <p>
           Linkedin -{" "}
           <a href="https://www.linkedin.com/in/lucas-karlsson-luc-as-dev/">

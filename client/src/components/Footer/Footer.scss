@@ -3,29 +3,34 @@
   grid-template-columns: repeat(auto-fit, 300px);
   justify-content: space-between;
 
+  background-color: var(--footer-bg);
+  border-radius: 0px 0px 8px 8px;
+
   width: 100%;
-  margin-top: 20px;
+  margin-top: -8px;
   gap: 10px;
 
   &-column {
     display: flex;
     flex-direction: column;
+
+    color: var(--footer-text);
     
     font-size: 14px;
     
     gap: 3px;
-
+    
     &-title {
       font-weight: 700;
       font-size: 16px;
     }
-
+    
     a {
       text-decoration: none;
-      color: var(--text-link);
-
+      color: var(--footer-text-link);
+      
       &:hover {
-        color: var(--text-link-dimmed);
+        color: var(--footer-text-link-dimmed);
       }
     }
   }
