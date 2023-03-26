@@ -3,6 +3,8 @@
   --bg: #eee;
   --text: #222;
   --text-dimmed: #777;
+  --text-link: #292929;
+  --text-link-dimmed: #494949;
   --app-bg: #fff;
 
   --navbar-top: 16px;
@@ -13,8 +15,8 @@
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
- }
+}
 
- body {
+body {
   background-color: var(--bg);
- }
+}
