@@ -1,13 +1,14 @@
 import "./App.scss";
-import Footer from "./components/Footer/Footer";
+import AppMessage from "./components/UI/AppMessage/AppMessage";
 import Navbar from "./components/Navbar/Navbar";
 import AppCard from "./components/UI/AppCard/AppCard";
-import AppMessage from "./components/UI/AppMessage/AppMessage";
+import ContentRow from "./components/UI/ContentRow/ContentRow";
+import ContentImage from "./components/UI/ContentImage/ContentImage";
+import WelcomeCard from "./components/WelcomeCard/WelcomeCard";
+import QuizGame from "./components/QuizGame/QuizGame";
+import Footer from "./components/Footer/Footer";
 
 import HERO_IMAGE from "./assets/hero.jpg";
-import ContentImage from "./components/UI/ContentImage/ContentImage";
-import ContentRow from "./components/UI/ContentRow/ContentRow";
-import WelcomeCard from "./components/WelcomeCard/WelcomeCard";
 
 export default function App() {
   return (
@@ -28,34 +29,12 @@ export default function App() {
           <WelcomeCard className="app-content-welcome" />
           <ContentImage className="app-content-hero" src={HERO_IMAGE} />
         </ContentRow>
-        <div
-          style={{
-            background: "lightgray",
-            height: "200px",
-            borderRadius: "8px",
-          }}
-        ></div>
-        <div
-          style={{
-            background: "lightgray",
-            height: "200px",
-            borderRadius: "8px",
-          }}
-        ></div>
-        <div
-          style={{
-            background: "lightgray",
-            height: "200px",
-            borderRadius: "8px",
-          }}
-        ></div>
-        <div
-          style={{
-            background: "lightgray",
-            height: "200px",
-            borderRadius: "8px",
-          }}
-        ></div>
+        {window.innerWidth >= 768 && (
+          <ContentRow>
+            <QuizGame localStorageKey="quiz-client-1" />
+            <QuizGame localStorageKey="quiz-client-2" />
+          </ContentRow>
+        )}
         <div
           style={{
             background: "lightgray",
