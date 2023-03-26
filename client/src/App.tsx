@@ -7,11 +7,14 @@ import AppMessage from "./components/UI/AppMessage/AppMessage";
 export default function App() {
   return (
     <div className="app">
-      <AppMessage title="I am currently open for hire!">
-        <p>I am looking for a job opportunity to work with...</p>
+      <AppMessage title="Seeking exciting job opportunities">
         <p>
-          If this sounds like a good idea, please feel free to reach out to me.
-          Contact me at ...
+          Are you on the lookout for a hardworking and ambitious individual who
+          is eager to take on new challenges? Look no further! I am currently
+          open to exciting job opportunities and ready to bring my passion for
+          learning, attention to detail, and dedication to delivering
+          high-quality results to your team. Let's connect and explore how we
+          can work together to achieve great things!
         </p>
       </AppMessage>
       <Navbar />
