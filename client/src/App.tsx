@@ -4,6 +4,11 @@ import Navbar from "./components/Navbar/Navbar";
 import AppCard from "./components/UI/AppCard/AppCard";
 import AppMessage from "./components/UI/AppMessage/AppMessage";
 
+import HERO_IMAGE from "./assets/hero.jpg";
+import ContentImage from "./components/UI/ContentImage/ContentImage";
+import ContentRow from "./components/UI/ContentRow/ContentRow";
+import WelcomeCard from "./components/WelcomeCard/WelcomeCard";
+
 export default function App() {
   return (
     <div className="app">
@@ -19,11 +24,14 @@ export default function App() {
       </AppMessage>
       <Navbar />
       <AppCard className="app-content">
+        <ContentRow>
+          <WelcomeCard className="app-content-welcome" />
+          <ContentImage className="app-content-hero" src={HERO_IMAGE} />
+        </ContentRow>
         <div
           style={{
             background: "lightgray",
             height: "200px",
-            marginBottom: "20px",
             borderRadius: "8px",
           }}
         ></div>
@@ -31,7 +39,6 @@ export default function App() {
           style={{
             background: "lightgray",
             height: "200px",
-            marginBottom: "20px",
             borderRadius: "8px",
           }}
         ></div>
@@ -39,7 +46,6 @@ export default function App() {
           style={{
             background: "lightgray",
             height: "200px",
-            marginBottom: "20px",
             borderRadius: "8px",
           }}
         ></div>
@@ -47,7 +53,6 @@ export default function App() {
           style={{
             background: "lightgray",
             height: "200px",
-            marginBottom: "20px",
             borderRadius: "8px",
           }}
         ></div>
@@ -55,7 +60,6 @@ export default function App() {
           style={{
             background: "lightgray",
             height: "200px",
-            marginBottom: "20px",
             borderRadius: "8px",
           }}
         ></div>
@@ -63,7 +67,6 @@ export default function App() {
           style={{
             background: "lightgray",
             height: "200px",
-            marginBottom: "20px",
             borderRadius: "8px",
           }}
         ></div>

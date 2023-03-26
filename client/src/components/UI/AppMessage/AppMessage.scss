@@ -7,10 +7,15 @@
 
   color: var(--text);
 
+  padding: 20px;
   gap: 10px;
 
   margin: 20px 0 20px;
   &-title {
     font-size: 1.2rem;
+  }
+
+  p {
+    text-align: justify;
   }
 }
