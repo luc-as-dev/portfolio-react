@@ -11,10 +11,14 @@
     padding-bottom: 18px !important;
     gap: 15px;
 
+    &-welcome {
+      flex-grow: 1;
+    }
+
     &-hero {
       flex-grow: 1;
-      max-width: 350px;
-      max-height: 450px;
+      max-width: 450px;
+      max-height: 350px;
     }
   }
 }
