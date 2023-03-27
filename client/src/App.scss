@@ -1,5 +1,5 @@
 .app {
-  max-width: 768px;
+  max-width: 1024px;
   margin: 20px auto;
   
   &-content {
@@ -13,8 +13,8 @@
 
     &-hero {
       flex-grow: 1;
-      max-width: 280px;
-      max-height: 350px;
+      max-width: 350px;
+      max-height: 450px;
     }
   }
 }

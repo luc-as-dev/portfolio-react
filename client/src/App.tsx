@@ -29,7 +29,7 @@ export default function App() {
           <WelcomeCard className="app-content-welcome" />
           <ContentImage className="app-content-hero" src={HERO_IMAGE} />
         </ContentRow>
-        {window.innerWidth >= 768 && (
+        {false && (
           <ContentRow>
             <QuizGame localStorageKey="quiz-client-1" />
             <QuizGame localStorageKey="quiz-client-2" />
