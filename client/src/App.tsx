@@ -2,14 +2,12 @@ import "./App.scss";
 import AppMessage from "./components/UI/AppMessage/AppMessage";
 import Navbar from "./components/Navbar/Navbar";
 import AppCard from "./components/UI/AppCard/AppCard";
-import ContentRow from "./components/UI/ContentRow/ContentRow";
-import ContentImage from "./components/UI/ContentImage/ContentImage";
-import WelcomeCard from "./components/WelcomeCard/WelcomeCard";
-import QuizGame from "./components/QuizGame/QuizGame";
 import Footer from "./components/Footer/Footer";
 
-import HERO_IMAGE from "./assets/hero.jpg";
-import CompetenceSlider from "./components/CompetenceSlider/CompetenceSlider";
+import HomeSection from "./sections/HomeSection/HomeSection";
+import AboutSection from "./sections/AboutSection/AboutSection";
+import ProjectsSection from "./sections/ProjectsSection/ProjectsSection";
+import ContactSection from "./sections/ContactSection/ContactSection";
 
 export default function App() {
   return (
@@ -24,35 +22,13 @@ export default function App() {
           can work together to achieve great things!
         </p>
       </AppMessage>
+
       <Navbar />
       <AppCard className="app-content">
-        <ContentRow>
-          <WelcomeCard className="app-content-welcome" />
-          <ContentImage className="app-content-hero" src={HERO_IMAGE} />
-        </ContentRow>
-        <ContentRow>
-          <CompetenceSlider className="app-content-competence-slider" />
-        </ContentRow>
-        {false && (
-          <ContentRow>
-            <QuizGame localStorageKey="quiz-client-1" />
-            <QuizGame localStorageKey="quiz-client-2" />
-          </ContentRow>
-        )}
-        <div
-          style={{
-            background: "lightgray",
-            height: "200px",
-            borderRadius: "8px",
-          }}
-        ></div>
-        <div
-          style={{
-            background: "lightgray",
-            height: "200px",
-            borderRadius: "8px",
-          }}
-        ></div>
+        <HomeSection />
+        <AboutSection />
+        <ProjectsSection />
+        <ContactSection />
       </AppCard>
       <Footer />
     </div>

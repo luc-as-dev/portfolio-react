@@ -1,0 +1,11 @@
+.home-section {
+  &-welcome {
+    flex-grow: 1;
+  }
+  
+  &-hero {
+    flex-grow: 1;
+    max-width: 400px;
+    max-height: 450px;
+  }
+}
