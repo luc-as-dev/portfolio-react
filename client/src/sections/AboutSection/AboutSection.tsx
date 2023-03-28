@@ -11,7 +11,7 @@ export default function AboutSection({}: Props) {
         {window.innerWidth > 800 ? (
           <CompetenceSlider
             className="about-section-competence-slider"
-            perView={5}
+            perView={6}
           />
         ) : (
           <CompetenceSlider
