@@ -9,6 +9,7 @@ import QuizGame from "./components/QuizGame/QuizGame";
 import Footer from "./components/Footer/Footer";
 
 import HERO_IMAGE from "./assets/hero.jpg";
+import CompetenceSlider from "./components/CompetenceSlider/CompetenceSlider";
 
 export default function App() {
   return (
@@ -28,6 +29,9 @@ export default function App() {
         <ContentRow>
           <WelcomeCard className="app-content-welcome" />
           <ContentImage className="app-content-hero" src={HERO_IMAGE} />
+        </ContentRow>
+        <ContentRow>
+          <CompetenceSlider className="app-content-competence-slider" />
         </ContentRow>
         {false && (
           <ContentRow>

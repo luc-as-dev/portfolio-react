@@ -1,0 +1,10 @@
+.competence-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-image {
+      width: 90%;
+      aspect-ratio: 1;
+    }
+}
