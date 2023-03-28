@@ -9,13 +9,14 @@ import htmlIcon from "../../assets/icons/html.png";
 import cssIcon from "../../assets/icons/css.png";
 import mongodbIcon from "../../assets/icons/mongodb.png";
 
-const AUTO_TIME_MS = 5000;
+const AUTO_TIME_MS = 2000;
 
 type Props = {
+  perView: number;
   className?: string;
 };
 
-export default function CompetenceSlider({ className }: Props) {
+export default function CompetenceSlider({ perView, className }: Props) {
   const classes = `competence-slider${className ? " " + className : ""}`;
   return (
     <SliderCard
@@ -25,7 +26,7 @@ export default function CompetenceSlider({ className }: Props) {
         loop: true,
         slides: {
           origin: "center",
-          perView: 5,
+          perView,
           spacing: 15,
         },
       }}
