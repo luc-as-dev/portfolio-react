@@ -2,11 +2,6 @@ import SliderCard from "../UI/SliderCard/SliderCard";
 import CompetenceIcon from "./CompetenceIcon/CompetenceIcon";
 import "./CompetenceSlider.scss";
 
-import reactIcon from "../../assets/icons/react.png";
-import jsIcon from "../../assets/icons/js.png";
-import tsIcon from "../../assets/icons/ts.png";
-import htmlIcon from "../../assets/icons/html.png";
-import cssIcon from "../../assets/icons/css.png";
 import mongodbIcon from "../../assets/icons/mongodb.png";
 
 const AUTO_TIME_MS = 2000;
@@ -27,7 +22,6 @@ export default function CompetenceSlider({ perView, className }: Props) {
         slides: {
           origin: "center",
           perView,
-          spacing: 15,
         },
       }}
       plugins={[
@@ -64,12 +58,50 @@ export default function CompetenceSlider({ perView, className }: Props) {
         },
       ]}
     >
-      <CompetenceIcon src={reactIcon} alt="React" />
-      <CompetenceIcon src={jsIcon} alt="Javascript" />
-      <CompetenceIcon src={tsIcon} alt="Typescript" />
-      <CompetenceIcon src={htmlIcon} alt="HTTML" />
-      <CompetenceIcon src={cssIcon} alt="CSS" />
-      <CompetenceIcon src={mongodbIcon} alt="MongoDB" />
+      <CompetenceIcon
+        src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+        label="React"
+      />
+      <CompetenceIcon
+        src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
+        label="Javascript"
+      />
+      <CompetenceIcon
+        src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+        label="Typescript"
+      />
+      <CompetenceIcon
+        src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg"
+        label="HTML"
+      />
+      <CompetenceIcon
+        src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg"
+        label="CSS"
+      />
+      <CompetenceIcon
+        src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+        label="Tailwind"
+      />
+      <CompetenceIcon
+        src="https://socket.io/images/logo.svg"
+        label="Socket.io"
+      />
+      <CompetenceIcon
+        src="https://img.icons8.com/color/512/mongodb.png"
+        label="MongoDB"
+      />
+      <CompetenceIcon
+        src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
+        label="Git"
+      />
+      <CompetenceIcon
+        src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+        label="Python"
+      />
+      <CompetenceIcon
+        src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
+        label="Node.js"
+      />
     </SliderCard>
   );
 }

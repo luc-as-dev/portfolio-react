@@ -16,7 +16,7 @@ export default function AboutSection({}: Props) {
         ) : (
           <CompetenceSlider
             className="about-section-competence-slider"
-            perView={3}
+            perView={2}
           />
         )}
       </ContentRow>
