@@ -27,17 +27,16 @@
     height: 100%;
     
     &-title {
-      max-width: 240px;
-      font-weight: 500;
-      font-size: 22px;
-      
+      max-width: 300px;
+      font-weight: 700;
+      font-size: 28px;
     }
     
     &-text {
       flex-grow: 1;
       letter-spacing: 1px;
       max-width: 360px;
-      font-size: 14px;
+      font-size: 18px;
     }
 
 
@@ -66,6 +65,36 @@
           opacity: 70%;
           filter: drop-shadow(0 0 0.6rem #ffffff49 );
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .welcome-card {
+    &-inner {
+
+      &-title {
+        font-size: 22px;
+      }
+
+      &-text {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 654px) {
+  .welcome-card {
+    background-image: (url("../../assets/hero-shadow-under.png"));
+    
+    &-inner {
+      backdrop-filter: blur( 15px );
+      color: #ddd;
+
+      &-title {
+        font-size: 22px;
       }
     }
   }

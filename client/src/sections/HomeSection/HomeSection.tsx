@@ -10,9 +10,9 @@ type Props = {};
 export default function HomeSection({}: Props) {
   return (
     <section className="home-section" id="home">
-      <ContentRow>
-        <WelcomeCard className="home-section-welcome" />
-        <ContentImage className="home-section-hero" src={HERO_IMAGE} />
+      <ContentRow className="home-section-row-1">
+        <WelcomeCard className="home-section-row-1-welcome" />
+        <ContentImage className="home-section-row-1-hero" src={HERO_IMAGE} />
       </ContentRow>
     </section>
   );

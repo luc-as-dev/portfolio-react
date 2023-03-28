@@ -1,11 +1,28 @@
 .home-section {
-  &-welcome {
-    flex-grow: 1;
+  &-row-1 {
+    flex-wrap: wrap-reverse;
+
+
+    &-welcome {
+      flex: 1 400px ;
+
+      min-height: 300px;
+    }
+    
+    &-hero {
+      flex: 1 200px;
+      max-height: 450px;
+    }
   }
-  
-  &-hero {
-    flex-grow: 1;
-    max-width: 400px;
-    max-height: 450px;
+}
+
+@media screen and (max-width: 654px) {
+  .home-section {
+    &-row-1 {
+      &-hero {
+        max-height: 340px;
+      }
+    }
+
   }
 }
