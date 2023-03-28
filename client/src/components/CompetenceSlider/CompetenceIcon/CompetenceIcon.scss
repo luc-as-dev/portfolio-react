@@ -2,9 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    padding: 20px;
 
     &-image {
-      width: 90%;
+      width: 75%;
       aspect-ratio: 1;
     }
 }

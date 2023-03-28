@@ -1,19 +1,25 @@
 import { cloneElement, ReactElement } from "react";
 import { useKeenSlider } from "keen-slider/react";
-import { KeenSliderOptions } from "keen-slider";
+import { KeenSliderOptions, KeenSliderPlugin } from "keen-slider";
 import ContentCard from "../ContentCard/ContentCard";
 import "keen-slider/keen-slider.min.css";
 import "./SliderCard.scss";
 
 type Props = {
   options: KeenSliderOptions;
+  plugins?: KeenSliderPlugin[];
   className?: string;
   children?: ReactElement[];
 };
 
-export default function SliderCard({ options, className, children }: Props) {
+export default function SliderCard({
+  options,
+  plugins,
+  className,
+  children,
+}: Props) {
   const classes = `slider-card${className ? " " + className : ""}`;
-  const [sliderRef] = useKeenSlider<HTMLDivElement>(options);
+  const [sliderRef] = useKeenSlider<HTMLDivElement>(options, plugins);
 
   return (
     <ContentCard className={classes}>
