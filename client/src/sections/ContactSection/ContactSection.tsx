@@ -9,7 +9,7 @@ export default function ContactSection({}: Props) {
       <ContentRow>
         <div
           style={{
-            background: "lightgray",
+            background: "var(--app-content-bg)",
             height: "200px",
             width: "100%",
             borderRadius: "8px",
@@ -17,7 +17,7 @@ export default function ContactSection({}: Props) {
         ></div>
         <div
           style={{
-            background: "lightgray",
+            background: "var(--app-content-bg)",
             height: "200px",
             width: "100%",
             borderRadius: "8px",
@@ -27,7 +27,7 @@ export default function ContactSection({}: Props) {
       <ContentRow>
         <div
           style={{
-            background: "lightgray",
+            background: "var(--app-content-bg)",
             height: "200px",
             width: "100%",
             borderRadius: "8px",

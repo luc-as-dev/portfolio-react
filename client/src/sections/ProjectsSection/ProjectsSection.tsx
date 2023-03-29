@@ -15,7 +15,7 @@ export default function ProjectsSection({}: Props) {
       )}
       <div
         style={{
-          background: "lightgray",
+          background: "var(--app-content-bg)",
           height: "200px",
           borderRadius: "8px",
         }}
