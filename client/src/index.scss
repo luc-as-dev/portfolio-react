@@ -2,33 +2,51 @@
 
 :root {
   --bg: #eee;
+  --app-bg: #fff;
+  --app-navbar-bg: #171717;
+  --app-content-bg: #ccc;
+  
   --text: #222;
   --text-dimmed: #777;
   --text-link: #292929;
   --text-link-dimmed: #494949;
   
-  --app-bg: #fff;
-  --app-content-bg: #ccc;
-  
-  --footer-bg: #333;
-  --footer-text: #eee;
-  --footer-text-link: #fff;
-  --footer-text-link-dimmed: #ddd;
+  --footer-bg: #171717;
+  --footer-text: #a3a3a3;
+  --footer-text-link: #a3a3a3;
+  --footer-text-link-dimmed: #737373;
   
   // Dark
   --bg: #27272a;
+  --app-bg: #3f3f46;
+  --app-navbar-bg: #171717;
+  --app-content-bg: #52525b;
+
   --text: #e4e4e7;
   --text-dimmed: #a1a1aa;
   --text-link: #292929;
   --text-link-dimmed: #494949;
   
-  --app-bg: #3f3f46;
-  --app-content-bg: #52525b;
+  --footer-bg: #171717;
+  --footer-text: #a3a3a3;
+  --footer-text-link: #a3a3a3;
+  --footer-text-link-dimmed: #737373;
   
-  --footer-bg: #333;
-  --footer-text: #e4e4e7;
-  --footer-text-link: #d4d4d8;
-  --footer-text-link-dimmed: #a1a1aa;
+  // Dark Natural
+  --bg: #282828;
+  --app-bg: #404040;
+  --app-navbar-bg: #171717;
+  --app-content-bg: #525252;
+
+  --text: #e5e5e5;
+  --text-dimmed: #a1a1aa;
+  --text-link: #292929;
+  --text-link-dimmed: #494949;
+  
+  --footer-bg: #171717;
+  --footer-text: #a3a3a3;
+  --footer-text-link: #a3a3a3;
+  --footer-text-link-dimmed: #737373;
   
   
   --navbar-top: 16px;
@@ -45,4 +63,29 @@
 
 body {
   background-color: var(--bg);
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #ffffff40;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ffffff40;
+}
+
+*::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:active {
+  background-color: #ffffff60;
 }
