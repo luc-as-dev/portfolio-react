@@ -5,7 +5,7 @@
   background-image: (url("../../assets/hero-shadow.png"));
   background-size: cover;
 
-  color: var(--text);
+  color: #404040;
   
   &-inner {
     position: absolute;
@@ -92,7 +92,8 @@
     &-inner {
       backdrop-filter: blur( 15px );
       -webkit-backdrop-filter: blur( 15px );
-      color: #ddd;
+      color: #d4d4d4
+;
 
       &-title {
         font-size: 22px;
