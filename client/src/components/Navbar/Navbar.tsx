@@ -7,9 +7,6 @@ export default function Navbar({}: Props) {
     <div className="navbar">
       <div className="navbar-inner">
         <a className="navbar-inner-logo" href="https://github.com/luc-as-dev">
-          <svg className="navbar-inner-logo-symbol nr1">
-            <rect className="navbar-inner-logo-symbol-fill nr1"></rect>
-          </svg>
           <svg className="navbar-inner-logo-symbol nr2">
             <rect className="navbar-inner-logo-symbol-fill nr2"></rect>
           </svg>

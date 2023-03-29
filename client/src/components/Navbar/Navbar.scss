@@ -11,10 +11,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--app-bg);
+    background-color: #171717;
     
     width: 100%;
-    padding: 12px 16px;
+    padding: 10px 10px;
     border-radius: 8px 8px 0 0;
 
     &-logo {
@@ -23,7 +23,11 @@
       text-decoration: none;
       cursor: pointer;
 
+      background-color: var(--app-bg);
+
+      padding: 4px;
       gap: 8px;
+      border-radius: 4px;
 
       &-symbol {
         box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -56,6 +60,10 @@
         font-weight: 600;
         color: var(--text);
       }
+
+      &:hover {
+        opacity: 90%;
+      }
     }
 
     &-items {
@@ -69,11 +77,19 @@
         color: var(--text-dimmed);
         font-size: 12px;
         font-weight: 600;
-        padding: 4px 4px;
-      }
+        padding: 4px;
+        border-radius: 4px;
 
-      &-item.active {
-        color: var(--text);
+        &.active {
+          color: var(--text);
+          background-color: var(--app-bg);
+        }
+        
+        &:hover {
+          color: var(--text);
+          background-color: var(--app-bg);
+          opacity: 60%;
+        }
       }
     }
   }
