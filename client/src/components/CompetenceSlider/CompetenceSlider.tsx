@@ -1,8 +1,5 @@
 import SliderCard from "../UI/SliderCard/SliderCard";
 import CompetenceIcon from "./CompetenceIcon/CompetenceIcon";
-import "./CompetenceSlider.scss";
-
-import mongodbIcon from "../../assets/icons/mongodb.png";
 
 const AUTO_TIME_MS = 2000;
 
@@ -12,7 +9,7 @@ type Props = {
 };
 
 export default function CompetenceSlider({ perView, className }: Props) {
-  const classes = `competence-slider${className ? " " + className : ""}`;
+  const classes = `${className ? " " + className : ""}`;
   return (
     <SliderCard
       className={classes}

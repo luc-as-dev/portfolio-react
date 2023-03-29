@@ -17,9 +17,9 @@
     
     background: rgba( 176, 176, 176, 0.3 );
     backdrop-filter: blur( 25px );
-    -webkit-backdrop-filter: blur( 13px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    -webkit-backdrop-filter: blur( 25px );
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     
     top: 0;
     left: 0;
@@ -91,6 +91,7 @@
     
     &-inner {
       backdrop-filter: blur( 15px );
+      -webkit-backdrop-filter: blur( 15px );
       color: #ddd;
 
       &-title {
