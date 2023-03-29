@@ -16,7 +16,11 @@ export default function Navbar({}: Props) {
           <svg className="navbar-inner-logo-symbol nr4">
             <rect className="navbar-inner-logo-symbol-fill nr4"></rect>
           </svg>
-          <h3 className="navbar-inner-logo-text">luc-as-dev</h3>
+          <div className="navbar-inner-logo-text-container">
+            <h3 className="navbar-inner-logo-text-container-text">
+              github.com/luc-as-dev
+            </h3>
+          </div>
         </a>
         <div className="navbar-inner-items">
           <p className="navbar-inner-items-item active">Home</p>

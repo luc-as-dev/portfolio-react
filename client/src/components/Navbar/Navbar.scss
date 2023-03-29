@@ -55,14 +55,24 @@
         } 
       }
 
-      &-text {
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--text);
-      }
+      &-text-container {
+        position: relative;
+        overflow-x: hidden;
 
-      &:hover {
-        opacity: 90%;
+        transition: 400ms ease-in-out;
+        
+        width: 60px;
+        height: 100%;
+        
+        &-text {
+          white-space: nowrap;
+          transform: translateX(-65px);
+          transition: 400ms ease-in-out;
+          
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--text);
+        }
       }
     }
 
@@ -105,6 +115,23 @@
     width: 100vw;
     height: calc(var(--navbar-top) + 10px);
   }
+}
+
+@media (min-width: 500px) {
+  .navbar {
+    &-inner {
+      &-logo {
+        &:hover &-text-container {
+          width: 120px;        
+        
+          &-text {
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+
 }
 
 @media (max-width: 440px) {
