@@ -60,6 +60,10 @@ export default function CompetenceSlider({ perView, className }: Props) {
         label="React"
       />
       <CompetenceIcon
+        src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+        label="Python"
+      />
+      <CompetenceIcon
         src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
         label="Javascript"
       />
@@ -74,6 +78,10 @@ export default function CompetenceSlider({ perView, className }: Props) {
       <CompetenceIcon
         src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg"
         label="CSS"
+      />
+      <CompetenceIcon
+        src="https://sass-lang.com/assets/img/styleguide/seal-color-aef0354c.png"
+        label="Sass"
       />
       <CompetenceIcon
         src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
@@ -92,12 +100,12 @@ export default function CompetenceSlider({ perView, className }: Props) {
         label="Git"
       />
       <CompetenceIcon
-        src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
-        label="Python"
-      />
-      <CompetenceIcon
         src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
         label="Node.js"
+      />
+      <CompetenceIcon
+        src="https://seeklogo.com/images/N/next-js-icon-logo-EE302D5DBD-seeklogo.com.png"
+        label="Next.js"
       />
     </SliderCard>
   );
