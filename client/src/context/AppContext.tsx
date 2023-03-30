@@ -34,6 +34,8 @@ type Props = {
   children: ReactNode;
 };
 
+const Y_SCROLL_OFFSET = -74;
+
 export default function AppContextProvider({ children }: Props) {
   const homeSectionRef = useRef<HTMLElement>(null);
   const aboutSectionRef = useRef<HTMLElement>(null);
@@ -45,7 +47,8 @@ export default function AppContextProvider({ children }: Props) {
   function toSection(section: RefObject<HTMLElement>): void {
     if (section && section.current) {
       setActiveSection(section);
-      section.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      const y = section.current.getBoundingClientRect().top + scrollY;
+      window.scrollTo({ top: y + Y_SCROLL_OFFSET, behavior: "smooth" });
     }
   }
 
