@@ -1,16 +1,6 @@
 .app {
   max-width: 1024px;
   margin: 20px auto;
-  
-  &-content {
-    display: flex;
-    flex-direction: column;
-
-    border-radius: 0 0 8px 8px !important;
-
-    padding-bottom: 18px !important;
-    gap: 15px;
-  }
 }
 
 @media (max-width: 1044px) {
