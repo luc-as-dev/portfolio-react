@@ -1,11 +1,14 @@
 import "./ContactSection.scss";
 import ContentRow from "../../components/UI/ContentRow/ContentRow";
+import { useAppContext } from "../../context/AppContext";
 
 type Props = {};
 
 export default function ContactSection({}: Props) {
+  const { contactSectionRef } = useAppContext();
+
   return (
-    <section className="contact-section" id="contact">
+    <section className="contact-section" id="contact" ref={contactSectionRef}>
       <ContentRow>
         <div
           style={{

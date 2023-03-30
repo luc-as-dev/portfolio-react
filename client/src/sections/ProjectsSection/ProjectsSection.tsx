@@ -1,12 +1,19 @@
 import "./ProjectsSection.scss";
 import QuizGame from "../../components/QuizGame/QuizGame";
 import ContentRow from "../../components/UI/ContentRow/ContentRow";
+import { useAppContext } from "../../context/AppContext";
 
 type Props = {};
 
 export default function ProjectsSection({}: Props) {
+  const { projectsSectionRef } = useAppContext();
+
   return (
-    <section className="projects-section" id="projects">
+    <section
+      className="projects-section"
+      id="projects"
+      ref={projectsSectionRef}
+    >
       {false && (
         <ContentRow>
           <QuizGame localStorageKey="quiz-client-1" />
