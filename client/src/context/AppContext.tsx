@@ -1,9 +1,9 @@
 import {
   createContext,
   ReactNode,
-  Ref,
   RefObject,
   useContext,
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -43,6 +43,41 @@ export default function AppContextProvider({ children }: Props) {
   const contactSectionRef = useRef<HTMLElement>(null);
   const [activeSectionRef, setActiveSection] =
     useState<RefObject<HTMLElement>>(homeSectionRef);
+
+  useEffect(() => {
+    const onScroll = () => {
+      updateActive();
+    };
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  function updateActive() {
+    const sections: { ref: RefObject<HTMLElement>; dy: number }[] = [];
+
+    [
+      homeSectionRef,
+      aboutSectionRef,
+      projectsSectionRef,
+      contactSectionRef,
+    ].forEach((section) => {
+      if (section && section.current) {
+        sections.push({
+          ref: section,
+          dy: section.current.getBoundingClientRect().top + Y_SCROLL_OFFSET,
+        });
+      }
+    });
+
+    const closest = sections.sort((a, b) => {
+      return Math.abs(a.dy) - Math.abs(b.dy);
+    });
+
+    if (closest) {
+      setActiveSection(closest[0].ref);
+    }
+  }
 
   function toSection(section: RefObject<HTMLElement>): void {
     if (section && section.current) {

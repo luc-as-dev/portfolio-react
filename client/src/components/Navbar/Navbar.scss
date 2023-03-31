@@ -84,18 +84,24 @@
 
       &-item {
         cursor: pointer;
+        transition: 300ms ease-in-out;
+        
+        background-color: var(--app-navbar-bg);
         color: var(--text-dimmed);
+        
         font-size: 12px;
         font-weight: 600;
+        
         padding: 4px;
         border-radius: 4px;
-
+        
         &.active {
           color: var(--text);
           background-color: var(--app-bg);
         }
         
         &:hover {
+          transition: 100ms ease-in;
           color: var(--text);
           background-color: var(--app-bg);
           opacity: 90%;
