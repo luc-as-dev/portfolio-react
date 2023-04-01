@@ -1,0 +1,16 @@
+{
+  "--bg": "#e5e5e5",
+  "--app-bg": "#f5f5f5",
+  "--app-navbar-bg": "#d4d4d4",
+  "--app-content-bg": "#ccc",
+
+  "--text": "#222",
+  "--text-dimmed": "#777",
+  "--text-link": "#292929",
+  "--text-link-dimmed": "#494949",
+
+  "--footer-bg": "#171717",
+  "--footer-text": "#e5e5e5",
+  "--footer-text-link": "#e5e5e5",
+  "--footer-text-link-dimmed": "#a3a3a3"
+}

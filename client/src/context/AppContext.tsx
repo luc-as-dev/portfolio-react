@@ -7,45 +7,6 @@ import {
   useRef,
   useState,
 } from "react";
-import useThemeDetector from "../hooks/useThemeDetector";
-
-type ThemeType = { [varName: string]: string };
-
-export const THEME_LIGHT: ThemeType = {
-  "--bg": "#e5e5e5",
-  "--app-bg": "#f5f5f5",
-  "--app-navbar-bg": "#d4d4d4",
-  "--app-content-bg": "#ccc",
-
-  "--text": "#222",
-  "--text-dimmed": "#777",
-  "--text-link": "#292929",
-  "--text-link-dimmed": "#494949",
-
-  "--footer-bg": "#171717",
-  "--footer-text": "#e5e5e5",
-  "--footer-text-link": "#e5e5e5",
-  "--footer-text-link-dimmed": "#a3a3a3",
-};
-
-export const THEME_DARK: ThemeType = {
-  "--bg": "#282828",
-  "--app-bg": "#404040",
-  "--app-navbar-bg": "#171717",
-  "--app-content-bg": "#525252",
-
-  "--text": "#e5e5e5",
-  "--text-dimmed": "#a1a1aa",
-  "--text-link": "#292929",
-  "--text-link-dimmed": "#494949",
-
-  "--footer-bg": "#171717",
-  "--footer-text": "#a3a3a3",
-  "--footer-text-link": "#a3a3a3",
-  "--footer-text-link-dimmed": "#737373",
-};
-
-export const THEME_SYSTEM: "SYSTEM" = "SYSTEM";
 
 type AppContextType = {
   homeSectionRef: RefObject<HTMLElement>;
@@ -54,8 +15,6 @@ type AppContextType = {
   contactSectionRef: RefObject<HTMLElement>;
   activeSectionRef: RefObject<HTMLElement>;
   toSection: (section: RefObject<HTMLElement>) => void;
-  currentTheme: ThemeType | "SYSTEM";
-  setTheme: (theme: ThemeType | "SYSTEM") => void;
 };
 
 const appContext = createContext<AppContextType>({
@@ -65,8 +24,6 @@ const appContext = createContext<AppContextType>({
   contactSectionRef: {} as RefObject<HTMLElement>,
   activeSectionRef: {} as RefObject<HTMLElement>,
   toSection: (section: RefObject<HTMLElement>) => {},
-  currentTheme: {} as ThemeType,
-  setTheme: (theme: ThemeType | "SYSTEM") => {},
 });
 
 export function useAppContext(): AppContextType {
@@ -86,11 +43,6 @@ export default function AppContextProvider({ children }: Props) {
   const contactSectionRef = useRef<HTMLElement>(null);
   const [activeSectionRef, setActiveSection] =
     useState<RefObject<HTMLElement>>(homeSectionRef);
-  const { isDarkTheme } = useThemeDetector();
-  const [currentTheme, setCurrentTheme] = useState<ThemeType | "SYSTEM">(
-    THEME_SYSTEM
-  );
-  const [applySystemTheme, setApplySystemTheme] = useState<boolean>(true);
 
   useEffect(() => {
     const onScroll = () => {
@@ -135,30 +87,6 @@ export default function AppContextProvider({ children }: Props) {
     }
   }
 
-  function applyTheme(theme: ThemeType) {
-    let key: keyof ThemeType;
-    for (key in theme) {
-      document.documentElement.style.setProperty(key, theme[key]);
-    }
-  }
-
-  function setTheme(theme: ThemeType | "SYSTEM") {
-    setCurrentTheme(theme);
-    if (theme === "SYSTEM") {
-      setApplySystemTheme(true);
-      theme = isDarkTheme ? THEME_DARK : THEME_LIGHT;
-    } else {
-      setApplySystemTheme(false);
-    }
-    applyTheme(theme);
-  }
-
-  useEffect(() => {
-    if (applySystemTheme) {
-      applyTheme(isDarkTheme ? THEME_DARK : THEME_LIGHT);
-    }
-  }, [isDarkTheme]);
-
   return (
     <appContext.Provider
       value={{
@@ -168,8 +96,6 @@ export default function AppContextProvider({ children }: Props) {
         contactSectionRef,
         activeSectionRef,
         toSection,
-        setTheme,
-        currentTheme,
       }}
     >
       {children}

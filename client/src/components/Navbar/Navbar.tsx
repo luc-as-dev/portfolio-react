@@ -1,15 +1,17 @@
 import { Moon, Settings, Sun } from "react-feather";
+import { useAppContext } from "../../context/AppContext";
 import {
   THEME_DARK,
   THEME_LIGHT,
   THEME_SYSTEM,
-  useAppContext,
-} from "../../context/AppContext";
+  useThemeContext,
+} from "../../context/ThemeContext";
 import "./Navbar.scss";
 
 type Props = {};
 
 export default function Navbar({}: Props) {
+  const theme = useThemeContext();
   const {
     toSection,
     activeSectionRef,
@@ -17,8 +19,6 @@ export default function Navbar({}: Props) {
     aboutSectionRef,
     projectsSectionRef,
     contactSectionRef,
-    setTheme,
-    currentTheme,
   } = useAppContext();
 
   return (
@@ -44,21 +44,21 @@ export default function Navbar({}: Props) {
         <div className="navbar-inner-theme">
           <Sun
             className={`navbar-inner-theme-icon${
-              currentTheme === THEME_LIGHT ? " active" : ""
+              theme.currentTheme === THEME_LIGHT ? " active" : ""
             }`}
-            onClick={() => setTheme(THEME_LIGHT)}
+            onClick={() => theme.setTheme(THEME_LIGHT)}
           />
           <Settings
             className={`navbar-inner-theme-icon${
-              currentTheme === THEME_SYSTEM ? " active" : ""
+              theme.currentTheme === THEME_SYSTEM ? " active" : ""
             }`}
-            onClick={() => setTheme(THEME_SYSTEM)}
+            onClick={() => theme.setTheme(THEME_SYSTEM)}
           />
           <Moon
             className={`navbar-inner-theme-icon${
-              currentTheme === THEME_DARK ? " active" : ""
+              theme.currentTheme === THEME_DARK ? " active" : ""
             }`}
-            onClick={() => setTheme(THEME_DARK)}
+            onClick={() => theme.setTheme(THEME_DARK)}
           />
         </div>
 
