@@ -1,0 +1,47 @@
+.slide-switch {
+  z-index: 1;
+  position: relative;
+  display: flex;
+
+  background-color: var(--app-bg);
+
+  padding: 3px;
+  gap: 8px;
+  border-radius: 4px;
+
+  &-selector {
+    z-index: 2;
+    position: absolute;
+    
+    background-color: var(--app-navbar-bg);
+
+    top: 3px;
+    left: 0;
+    height: calc(100% - 2 * 3px);
+    border-radius: inherit;
+  }
+
+  &-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+
+    color: var(--text-dimmed);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    padding: inherit;
+
+    &.active {
+      color: var(--text);
+    }
+
+    &:hover {
+      color: var(--text);
+    }
+  }
+}

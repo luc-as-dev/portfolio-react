@@ -1,20 +1,14 @@
 import { Moon, Settings, Sun } from "react-feather";
 import { useAppContext } from "../../context/AppContext";
 import { useThemeContext } from "../../context/ThemeContext";
+import SlideSwitch from "../UI/SlideSwitch/SlideSwitch";
 import "./Navbar.scss";
 
 type Props = {};
 
 export default function Navbar({}: Props) {
   const { themes, currentTheme, setTheme } = useThemeContext();
-  const {
-    toSection,
-    activeSectionRef,
-    homeSectionRef,
-    aboutSectionRef,
-    projectsSectionRef,
-    contactSectionRef,
-  } = useAppContext();
+  const { activeSectionName, toSection } = useAppContext();
 
   return (
     <div className="navbar">
@@ -36,61 +30,54 @@ export default function Navbar({}: Props) {
           </div>
         </a>
 
-        <div className="navbar-inner-theme">
-          <Sun
-            className={`navbar-inner-theme-icon${
-              currentTheme === themes.light ? " active" : ""
-            }`}
-            onClick={() => setTheme(themes.light)}
-          />
-          <Settings
-            className={`navbar-inner-theme-icon${
-              currentTheme === themes.system ? " active" : ""
-            }`}
-            onClick={() => setTheme(themes.system)}
-          />
-          <Moon
-            className={`navbar-inner-theme-icon${
-              currentTheme === themes.dark ? " active" : ""
-            }`}
-            onClick={() => setTheme(themes.dark)}
-          />
-        </div>
+        <SlideSwitch
+          value={currentTheme.name}
+          alternatives={{
+            light: {
+              onClick: () => setTheme(themes.light),
+              node: <Sun height="16px" width="16px" />,
+            },
+            system: {
+              onClick: () => setTheme(themes.system),
+              node: <Settings height="16px" width="16px" />,
+            },
+            dark: {
+              onClick: () => setTheme(themes.dark),
+              node: <Moon height="16px" width="16px" />,
+            },
+          }}
+        />
 
-        <div className="navbar-inner-items">
-          <p
-            className={`navbar-inner-items-item${
-              activeSectionRef === homeSectionRef ? " active" : ""
-            }`}
-            onClick={() => toSection(homeSectionRef)}
-          >
-            Home
-          </p>
-          <p
-            className={`navbar-inner-items-item${
-              activeSectionRef === aboutSectionRef ? " active" : ""
-            }`}
-            onClick={() => toSection(aboutSectionRef)}
-          >
-            About
-          </p>
-          <p
-            className={`navbar-inner-items-item${
-              activeSectionRef === projectsSectionRef ? " active" : ""
-            }`}
-            onClick={() => toSection(projectsSectionRef)}
-          >
-            Projects
-          </p>
-          <p
-            className={`navbar-inner-items-item${
-              activeSectionRef === contactSectionRef ? " active" : ""
-            }`}
-            onClick={() => toSection(contactSectionRef)}
-          >
-            Contact
-          </p>
-        </div>
+        <SlideSwitch
+          className="navbar-inner-section-switch"
+          value={activeSectionName}
+          alternatives={{
+            home: {
+              onClick: () => toSection("home"),
+              node: (
+                <div className="navbar-inner-section-switch-item">Home</div>
+              ),
+            },
+            about: {
+              onClick: () => toSection("about"),
+              node: (
+                <div className="navbar-inner-section-switch-item">About</div>
+              ),
+            },
+            projects: {
+              onClick: () => toSection("projects"),
+              node: (
+                <div className="navbar-inner-section-switch-item">Projects</div>
+              ),
+            },
+            contact: {
+              onClick: () => toSection("contact"),
+              node: (
+                <div className="navbar-inner-section-switch-item">Contact</div>
+              ),
+            },
+          }}
+        />
       </div>
       <div className="navbar-eraser"></div>
     </div>
