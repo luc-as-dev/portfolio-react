@@ -31,6 +31,7 @@ export default function Navbar({}: Props) {
         </a>
 
         <SlideSwitch
+          className="navbar-inner-theme-switch"
           value={currentTheme.name}
           alternatives={{
             light: {
