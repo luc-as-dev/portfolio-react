@@ -1,4 +1,9 @@
-import { useAppContext } from "../../context/AppContext";
+import { Moon, Settings, Sun } from "react-feather";
+import {
+  THEME_DARK,
+  THEME_LIGHT,
+  useAppContext,
+} from "../../context/AppContext";
 import "./Navbar.scss";
 
 type Props = {};
@@ -11,6 +16,8 @@ export default function Navbar({}: Props) {
     aboutSectionRef,
     projectsSectionRef,
     contactSectionRef,
+    setTheme,
+    currentTheme,
   } = useAppContext();
 
   return (
@@ -32,6 +39,23 @@ export default function Navbar({}: Props) {
             </h3>
           </div>
         </a>
+
+        <div className="navbar-inner-theme">
+          <Sun
+            className={`navbar-inner-theme-icon${
+              currentTheme === THEME_LIGHT ? " active" : ""
+            }`}
+            onClick={() => setTheme(THEME_LIGHT)}
+          />
+          <Settings className="navbar-inner-theme-icon" />
+          <Moon
+            className={`navbar-inner-theme-icon${
+              currentTheme === THEME_DARK ? " active" : ""
+            }`}
+            onClick={() => setTheme(THEME_DARK)}
+          />
+        </div>
+
         <div className="navbar-inner-items">
           <p
             className={`navbar-inner-items-item${
