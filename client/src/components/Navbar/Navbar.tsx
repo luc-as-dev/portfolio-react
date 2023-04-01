@@ -2,6 +2,7 @@ import { Moon, Settings, Sun } from "react-feather";
 import {
   THEME_DARK,
   THEME_LIGHT,
+  THEME_SYSTEM,
   useAppContext,
 } from "../../context/AppContext";
 import "./Navbar.scss";
@@ -47,7 +48,12 @@ export default function Navbar({}: Props) {
             }`}
             onClick={() => setTheme(THEME_LIGHT)}
           />
-          <Settings className="navbar-inner-theme-icon" />
+          <Settings
+            className={`navbar-inner-theme-icon${
+              currentTheme === THEME_SYSTEM ? " active" : ""
+            }`}
+            onClick={() => setTheme(THEME_SYSTEM)}
+          />
           <Moon
             className={`navbar-inner-theme-icon${
               currentTheme === THEME_DARK ? " active" : ""
