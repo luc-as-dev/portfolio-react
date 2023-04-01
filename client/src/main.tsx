@@ -5,10 +5,13 @@ import AppContextProvider from "./context/AppContext";
 import ThemeContextProvider from "./context/ThemeContext";
 import "./index.scss";
 
+import lightJSON from "./assets/themes/light.json";
+import darkJSON from "./assets/themes/dark.json";
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <AppContextProvider>
-      <ThemeContextProvider>
+      <ThemeContextProvider light={lightJSON} dark={darkJSON}>
         <App />
       </ThemeContextProvider>
     </AppContextProvider>

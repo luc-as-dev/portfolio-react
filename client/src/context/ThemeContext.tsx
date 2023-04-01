@@ -7,35 +7,19 @@ import {
 } from "react";
 import useThemeDetector from "../hooks/useThemeDetector";
 
-import lightJSON from "../assets/themes/light.json";
-import darkJSON from "../assets/themes/dark.json";
-
 type ThemeType = {
   name: string;
   vars: { [varName: string]: string };
 };
 
-export const THEME_LIGHT: ThemeType = {
-  name: "light",
-  vars: lightJSON as { [varName: string]: string },
-};
-
-export const THEME_DARK: ThemeType = {
-  name: "dark",
-  vars: darkJSON as { [varName: string]: string },
-};
-
-export const THEME_SYSTEM: ThemeType = {
-  name: "SYSTEM",
-  vars: {} as { [varName: string]: string },
-};
-
 export type ThemeContextType = {
+  themes: { [name: string]: ThemeType };
   currentTheme: ThemeType;
   setTheme: (theme: ThemeType) => void;
 };
 
 const themeContext = createContext<ThemeContextType>({
+  themes: {},
   currentTheme: {} as ThemeType,
   setTheme: (theme: ThemeType) => {},
 });
@@ -45,13 +29,19 @@ export function useThemeContext(): ThemeContextType {
 }
 
 type Props = {
+  light: { [varName: string]: string };
+  dark: { [varName: string]: string };
   children: ReactNode;
 };
 
-export default function ThemeContextProvider({ children }: Props) {
+export default function ThemeContextProvider({ light, dark, children }: Props) {
   const { isDarkTheme } = useThemeDetector();
-  const [themes, setThemes] = useState([THEME_SYSTEM, THEME_LIGHT, THEME_DARK]);
-  const [currentTheme, setCurrentTheme] = useState<ThemeType>(THEME_SYSTEM);
+  const [themes, setThemes] = useState<{ [name: string]: ThemeType }>({
+    system: { name: "system", vars: {} },
+    light: { name: "light", vars: light },
+    dark: { name: "dark", vars: dark },
+  });
+  const [currentTheme, setCurrentTheme] = useState<ThemeType>(themes.system);
   const [applySystemTheme, setApplySystemTheme] = useState<boolean>(true);
 
   function applyTheme(theme: ThemeType) {
@@ -63,9 +53,9 @@ export default function ThemeContextProvider({ children }: Props) {
 
   function setTheme(theme: ThemeType) {
     setCurrentTheme(theme);
-    if (theme.name === "SYSTEM") {
+    if (theme.name === themes.system.name) {
       setApplySystemTheme(true);
-      theme = isDarkTheme ? THEME_DARK : THEME_LIGHT;
+      theme = isDarkTheme ? themes.dark : themes.light;
     } else {
       setApplySystemTheme(false);
     }
@@ -74,12 +64,12 @@ export default function ThemeContextProvider({ children }: Props) {
 
   useEffect(() => {
     if (applySystemTheme) {
-      applyTheme(isDarkTheme ? THEME_DARK : THEME_LIGHT);
+      applyTheme(isDarkTheme ? themes.dark : themes.light);
     }
   }, [isDarkTheme]);
 
   return (
-    <themeContext.Provider value={{ setTheme, currentTheme }}>
+    <themeContext.Provider value={{ themes, currentTheme, setTheme }}>
       {children}
     </themeContext.Provider>
   );
