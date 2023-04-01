@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="64" width="64">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="256" width="256">
   <g transform="translate(3,3)">
-    <rect id="rounded-rectangle" x="0" y="0" height="58" width="58" fill="#39d353" rx="12" />
+    <rect id="rounded-rectangle" x="0" y="0" height="256" width="256" fill="#39d353" rx="50" />
   </g>
 </svg>
