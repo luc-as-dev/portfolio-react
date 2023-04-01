@@ -28,21 +28,48 @@ export function useThemeContext(): ThemeContextType {
   return useContext(themeContext);
 }
 
+function getInitTheme(
+  key: string | undefined,
+  themes: { [name: string]: ThemeType }
+): ThemeType {
+  if (key) {
+    const themeName = localStorage.getItem(key);
+    if (themeName && themes[themeName]) {
+      return themes[themeName];
+    }
+  }
+  return themes.system;
+}
+
+function setInitTheme(key: string | undefined, theme: ThemeType): void {
+  if (key) localStorage.setItem(key, theme.name);
+}
+
 type Props = {
   light: { [varName: string]: string };
   dark: { [varName: string]: string };
   children: ReactNode;
+  localStorageKey?: string;
 };
 
-export default function ThemeContextProvider({ light, dark, children }: Props) {
+export default function ThemeContextProvider({
+  light,
+  dark,
+  children,
+  localStorageKey,
+}: Props) {
   const { isDarkTheme } = useThemeDetector();
   const [themes, setThemes] = useState<{ [name: string]: ThemeType }>({
     system: { name: "system", vars: {} },
     light: { name: "light", vars: light },
     dark: { name: "dark", vars: dark },
   });
-  const [currentTheme, setCurrentTheme] = useState<ThemeType>(themes.system);
-  const [applySystemTheme, setApplySystemTheme] = useState<boolean>(true);
+  const [currentTheme, setCurrentTheme] = useState<ThemeType>(
+    getInitTheme(localStorageKey, themes)
+  );
+  const [applySystemTheme, setApplySystemTheme] = useState<boolean>(
+    currentTheme === themes.system
+  );
 
   function applyTheme(theme: ThemeType) {
     let varName: keyof ThemeType["vars"];
@@ -53,6 +80,7 @@ export default function ThemeContextProvider({ light, dark, children }: Props) {
 
   function setTheme(theme: ThemeType) {
     setCurrentTheme(theme);
+    setInitTheme(localStorageKey, theme);
     if (theme.name === themes.system.name) {
       setApplySystemTheme(true);
       theme = isDarkTheme ? themes.dark : themes.light;
@@ -61,6 +89,9 @@ export default function ThemeContextProvider({ light, dark, children }: Props) {
     }
     applyTheme(theme);
   }
+  useEffect(() => {
+    setTheme(currentTheme);
+  }, []);
 
   useEffect(() => {
     if (applySystemTheme) {
