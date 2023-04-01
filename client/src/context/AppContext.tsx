@@ -8,6 +8,57 @@ import {
   useState,
 } from "react";
 
+type ThemeType = {
+  "--bg": string;
+  "--app-bg": string;
+  "--app-navbar-bg": string;
+  "--app-content-bg": string;
+
+  "--text": string;
+  "--text-dimmed": string;
+  "--text-link": string;
+  "--text-link-dimmed": string;
+
+  "--footer-bg": string;
+  "--footer-text": string;
+  "--footer-text-link": string;
+  "--footer-text-link-dimmed": string;
+};
+
+export const THEME_LIGHT: ThemeType = {
+  "--bg": "#e5e5e5",
+  "--app-bg": "#f5f5f5",
+  "--app-navbar-bg": "#d4d4d4",
+  "--app-content-bg": "#ccc",
+
+  "--text": "#222",
+  "--text-dimmed": "#777",
+  "--text-link": "#292929",
+  "--text-link-dimmed": "#494949",
+
+  "--footer-bg": "#171717",
+  "--footer-text": "#e5e5e5",
+  "--footer-text-link": "#e5e5e5",
+  "--footer-text-link-dimmed": "#a3a3a3",
+};
+
+export const THEME_DARK: ThemeType = {
+  "--bg": "#282828",
+  "--app-bg": "#404040",
+  "--app-navbar-bg": "#171717",
+  "--app-content-bg": "#525252",
+
+  "--text": "#e5e5e5",
+  "--text-dimmed": "#a1a1aa",
+  "--text-link": "#292929",
+  "--text-link-dimmed": "#494949",
+
+  "--footer-bg": "#171717",
+  "--footer-text": "#a3a3a3",
+  "--footer-text-link": "#a3a3a3",
+  "--footer-text-link-dimmed": "#737373",
+};
+
 type AppContextType = {
   homeSectionRef: RefObject<HTMLElement>;
   aboutSectionRef: RefObject<HTMLElement>;
@@ -15,6 +66,8 @@ type AppContextType = {
   contactSectionRef: RefObject<HTMLElement>;
   activeSectionRef: RefObject<HTMLElement>;
   toSection: (section: RefObject<HTMLElement>) => void;
+  currentTheme: ThemeType;
+  setTheme: (theme: ThemeType) => void;
 };
 
 const appContext = createContext<AppContextType>({
@@ -24,6 +77,8 @@ const appContext = createContext<AppContextType>({
   contactSectionRef: {} as RefObject<HTMLElement>,
   activeSectionRef: {} as RefObject<HTMLElement>,
   toSection: (section: RefObject<HTMLElement>) => {},
+  currentTheme: {} as ThemeType,
+  setTheme: (theme: ThemeType) => {},
 });
 
 export function useAppContext(): AppContextType {
@@ -43,8 +98,10 @@ export default function AppContextProvider({ children }: Props) {
   const contactSectionRef = useRef<HTMLElement>(null);
   const [activeSectionRef, setActiveSection] =
     useState<RefObject<HTMLElement>>(homeSectionRef);
+  const [currentTheme, setCurrentTheme] = useState<ThemeType>(THEME_DARK);
 
   useEffect(() => {
+    setTheme(THEME_DARK);
     const onScroll = () => {
       updateActive();
     };
@@ -87,7 +144,13 @@ export default function AppContextProvider({ children }: Props) {
     }
   }
 
-  homeSectionRef.current;
+  function setTheme(theme: ThemeType) {
+    setCurrentTheme(theme);
+    let key: keyof ThemeType;
+    for (key in theme) {
+      document.documentElement.style.setProperty(key, theme[key]);
+    }
+  }
 
   return (
     <appContext.Provider
@@ -98,6 +161,8 @@ export default function AppContextProvider({ children }: Props) {
         contactSectionRef,
         activeSectionRef,
         toSection,
+        setTheme,
+        currentTheme,
       }}
     >
       {children}
