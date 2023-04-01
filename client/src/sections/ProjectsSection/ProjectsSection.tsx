@@ -6,13 +6,13 @@ import { useAppContext } from "../../context/AppContext";
 type Props = {};
 
 export default function ProjectsSection({}: Props) {
-  const { projectsSectionRef } = useAppContext();
+  const { sectionRefs } = useAppContext();
 
   return (
     <section
       className="projects-section"
       id="projects"
-      ref={projectsSectionRef}
+      ref={sectionRefs.projects}
     >
       {false && (
         <ContentRow>

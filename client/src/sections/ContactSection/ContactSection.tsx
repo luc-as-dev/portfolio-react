@@ -5,10 +5,10 @@ import { useAppContext } from "../../context/AppContext";
 type Props = {};
 
 export default function ContactSection({}: Props) {
-  const { contactSectionRef } = useAppContext();
+  const { sectionRefs } = useAppContext();
 
   return (
-    <section className="contact-section" id="contact" ref={contactSectionRef}>
+    <section className="contact-section" id="contact" ref={sectionRefs.contact}>
       <ContentRow>
         <div
           style={{

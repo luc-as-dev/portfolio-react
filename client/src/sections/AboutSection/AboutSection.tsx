@@ -6,13 +6,13 @@ import { useAppContext } from "../../context/AppContext";
 type Props = {};
 
 export default function AboutSection({}: Props) {
-  const { aboutSectionRef } = useAppContext();
+  const { sectionRefs } = useAppContext();
 
   return (
     <section
       className="app-content-section about-section"
       id="about"
-      ref={aboutSectionRef}
+      ref={sectionRefs.about}
     >
       <ContentRow>
         {window.innerWidth > 800 ? (

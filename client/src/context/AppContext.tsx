@@ -9,21 +9,15 @@ import {
 } from "react";
 
 type AppContextType = {
-  homeSectionRef: RefObject<HTMLElement>;
-  aboutSectionRef: RefObject<HTMLElement>;
-  projectsSectionRef: RefObject<HTMLElement>;
-  contactSectionRef: RefObject<HTMLElement>;
-  activeSectionRef: RefObject<HTMLElement>;
-  toSection: (section: RefObject<HTMLElement>) => void;
+  sectionRefs: { [name: string]: RefObject<HTMLElement> };
+  toSection: (name: SectionNamesType) => void;
+  activeSectionName: string;
 };
 
 const appContext = createContext<AppContextType>({
-  homeSectionRef: {} as RefObject<HTMLElement>,
-  aboutSectionRef: {} as RefObject<HTMLElement>,
-  projectsSectionRef: {} as RefObject<HTMLElement>,
-  contactSectionRef: {} as RefObject<HTMLElement>,
-  activeSectionRef: {} as RefObject<HTMLElement>,
-  toSection: (section: RefObject<HTMLElement>) => {},
+  sectionRefs: {},
+  toSection: (name: SectionNamesType) => {},
+  activeSectionName: "",
 });
 
 export function useAppContext(): AppContextType {
@@ -35,14 +29,16 @@ type Props = {
 };
 
 const Y_SCROLL_OFFSET = -78;
+type SectionNamesType = "home" | "about" | "projects" | "contact";
 
 export default function AppContextProvider({ children }: Props) {
-  const homeSectionRef = useRef<HTMLElement>(null);
-  const aboutSectionRef = useRef<HTMLElement>(null);
-  const projectsSectionRef = useRef<HTMLElement>(null);
-  const contactSectionRef = useRef<HTMLElement>(null);
-  const [activeSectionRef, setActiveSection] =
-    useState<RefObject<HTMLElement>>(homeSectionRef);
+  const [activeSectionName, setActiveSectionName] = useState<string>("home");
+  const sectionRefs = {
+    home: useRef<HTMLElement>(null),
+    about: useRef<HTMLElement>(null),
+    projects: useRef<HTMLElement>(null),
+    contact: useRef<HTMLElement>(null),
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -54,34 +50,32 @@ export default function AppContextProvider({ children }: Props) {
   }, []);
 
   function updateActive() {
-    const sections: { ref: RefObject<HTMLElement>; dy: number }[] = [];
+    const sections: { name: string; dy: number }[] = [];
 
-    [
-      homeSectionRef,
-      aboutSectionRef,
-      projectsSectionRef,
-      contactSectionRef,
-    ].forEach((section) => {
+    let key: SectionNamesType;
+    for (key in sectionRefs) {
+      const section = sectionRefs[key];
+
       if (section && section.current) {
         sections.push({
-          ref: section,
+          name: key,
           dy: section.current.getBoundingClientRect().top + Y_SCROLL_OFFSET,
         });
       }
-    });
+    }
 
     const closest = sections.sort((a, b) => {
       return Math.abs(a.dy) - Math.abs(b.dy);
     });
 
     if (closest) {
-      setActiveSection(closest[0].ref);
+      setActiveSectionName(closest[0].name);
     }
   }
 
-  function toSection(section: RefObject<HTMLElement>): void {
+  function toSection(name: SectionNamesType): void {
+    const section = sectionRefs[name];
     if (section && section.current) {
-      setActiveSection(section);
       const y = section.current.getBoundingClientRect().top + scrollY;
       window.scrollTo({ top: y + Y_SCROLL_OFFSET, behavior: "smooth" });
     }
@@ -90,11 +84,8 @@ export default function AppContextProvider({ children }: Props) {
   return (
     <appContext.Provider
       value={{
-        homeSectionRef,
-        aboutSectionRef,
-        projectsSectionRef,
-        contactSectionRef,
-        activeSectionRef,
+        sectionRefs,
+        activeSectionName,
         toSection,
       }}
     >

@@ -9,10 +9,10 @@ import { useAppContext } from "../../context/AppContext";
 type Props = {};
 
 export default function HomeSection({}: Props) {
-  const { homeSectionRef } = useAppContext();
+  const { sectionRefs } = useAppContext();
 
   return (
-    <section className="home-section" id="home" ref={homeSectionRef}>
+    <section className="home-section" id="home" ref={sectionRefs.home}>
       <ContentRow className="home-section-row-1">
         <WelcomeCard className="home-section-row-1-welcome" />
         <ContentImage className="home-section-row-1-hero" src={HERO_IMAGE} />
