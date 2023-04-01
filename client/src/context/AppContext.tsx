@@ -89,7 +89,7 @@ type Props = {
   children: ReactNode;
 };
 
-const Y_SCROLL_OFFSET = -74;
+const Y_SCROLL_OFFSET = -78;
 
 export default function AppContextProvider({ children }: Props) {
   const homeSectionRef = useRef<HTMLElement>(null);
