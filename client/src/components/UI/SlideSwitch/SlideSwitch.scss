@@ -37,6 +37,10 @@
     padding: inherit;
 
     &.active {
+      transition-delay: 200ms;
+      transition-duration: 100ms;
+      transition-property: color;
+      
       color: var(--text);
     }
 

@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef } from "react";
+import { animated, useSpring } from "@react-spring/web";
 import "./SlideSwitch.scss";
 
 type Props = {
@@ -12,6 +13,10 @@ export default function SlideSwitch({ alternatives, value, className }: Props) {
   const selectorRef = useRef<HTMLDivElement>(null);
   const selectedRef = useRef<HTMLDivElement>(null);
 
+  const [springs, api] = useSpring(() => ({
+    from: { left: 0, width: 0 },
+  }));
+
   const classes = `slide-switch${className ? " " + className : ""}`;
 
   useEffect(() => {
@@ -20,14 +25,35 @@ export default function SlideSwitch({ alternatives, value, className }: Props) {
     }
 
     if (slideSwitchRef.current && selectorRef.current && selectedRef.current) {
-      const width: number = selectedRef.current.clientWidth;
       const slideLeft = slideSwitchRef.current.getBoundingClientRect().left;
-      const left = selectedRef.current.getBoundingClientRect().left;
+      const oldLeft =
+        selectorRef.current.getBoundingClientRect().left - slideLeft;
+      const oldWidth = selectorRef.current.clientWidth;
+      const newLeft =
+        selectedRef.current.getBoundingClientRect().left - slideLeft;
+      const newWidth = selectedRef.current.clientWidth;
 
-      selectorRef.current.style.left = `${left - slideLeft}px`;
-      selectorRef.current.style.width = `${width}px`;
+      // on start
+      if (oldWidth === 0 && oldLeft === 0) {
+        api.start({
+          to: {
+            left: newLeft,
+            width: newWidth,
+          },
+          config: { duration: 0 },
+        });
+      }
+
+      const factor = 2;
+      const duration = factor * Math.abs(newLeft - oldLeft);
+
+      api.start({
+        from: { left: oldLeft, width: oldWidth },
+        to: { left: newLeft, width: newWidth },
+        config: { duration },
+      });
     }
-  }, [value]);
+  }, [value, slideSwitchRef, selectorRef, selectedRef]);
 
   return (
     <div className={classes} ref={slideSwitchRef}>
@@ -43,7 +69,11 @@ export default function SlideSwitch({ alternatives, value, className }: Props) {
           {alternatives[key].node}
         </div>
       ))}
-      <div className="slide-switch-selector" ref={selectorRef}></div>
+      <animated.div
+        className="slide-switch-selector"
+        style={{ ...springs }}
+        ref={selectorRef}
+      ></animated.div>
     </div>
   );
 }
