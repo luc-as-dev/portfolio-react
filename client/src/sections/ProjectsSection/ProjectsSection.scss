@@ -1,0 +1,10 @@
+.projects-section {
+  &-row {
+    flex-wrap: wrap;
+    &-card {
+      flex: 400px 1;
+      flex-shrink: 0;
+      min-height: 400px;
+    }
+  }
+}
