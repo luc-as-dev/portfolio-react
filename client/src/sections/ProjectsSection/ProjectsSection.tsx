@@ -15,26 +15,33 @@ export default function ProjectsSection({}: Props) {
       id="projects"
       ref={sectionRefs.projects}
     >
-      {false && (
+      {/*
         <ContentRow>
           <QuizGame localStorageKey="quiz-client-1" />
           <QuizGame localStorageKey="quiz-client-2" />
         </ContentRow>
-      )}
-      <ContentRow className="projects-section-row">
+      */}
+
+      <div className="projects-section-list">
         <ProjectCard
-          className="projects-section-row-card"
+          className="projects-section-list-item"
           background={<div style={{ background: "#1647a3" }}></div>}
           label="Quiz Multiplayer Game"
           href="https://quiz-multiplayer-game.netlify.app/"
         />
         <ProjectCard
-          className="projects-section-row-card"
+          className="projects-section-list-item"
           background={<div style={{ background: "#20212c" }}></div>}
           label="Kanban Board"
           href="https://luc-as-dev-kanban-board.netlify.app/"
         />
-      </ContentRow>
+        <ProjectCard
+          className="projects-section-list-item"
+          background={<div style={{ background: "#121212" }}></div>}
+          label="Spotify Clone"
+          href=""
+        />
+      </div>
     </section>
   );
 }
