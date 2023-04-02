@@ -13,7 +13,7 @@
     z-index: 2;
     position: absolute;
     
-    background-color: var(--app-navbar-bg);
+    background-color: var(--navbar-bg);
 
     top: 3px;
     left: 0;
@@ -30,7 +30,7 @@
     cursor: pointer;
     user-select: none;
 
-    color: var(--text-dimmed);
+    color: var(--navbar-text-dimmed);
 
     font-size: 13px;
     font-weight: 600;
@@ -42,11 +42,11 @@
       transition-duration: 100ms;
       transition-property: color;
       
-      color: var(--text);
+      color: var(--navbar-text-selected);
     }
 
     &:hover {
-      color: var(--text);
+      color: var(--navbar-text);
     }
   }
 }

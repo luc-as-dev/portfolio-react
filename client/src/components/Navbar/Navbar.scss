@@ -10,7 +10,7 @@
     z-index: 2;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    background-color: var(--app-navbar-bg);
+    background-color: var(--navbar-bg);
     
     width: 100%;
     padding: 10px 10px;
@@ -74,7 +74,7 @@
           
           font-size: 12px;
           font-weight: 600;
-          color: var(--text);
+          color: var(--navbar-text);
         }
       }
     }
