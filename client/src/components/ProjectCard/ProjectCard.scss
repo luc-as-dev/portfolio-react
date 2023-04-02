@@ -20,9 +20,10 @@
     justify-content: space-between;
 
     height: 100%;
-    padding: 20px;
-
+    
     &-top {
+      padding: 20px;
+
       &-link {
         display: flex;
         justify-content: center;
@@ -39,10 +40,12 @@
     }
 
     &-bottom{
+      padding: 30px;
+
       &-label {
         color: #e5e5e5;
   
-        font-size: 18px;
+        font-size: 24px;
         font-weight: 500;
       }
     }
