@@ -45,7 +45,7 @@
       color: var(--navbar-text-selected);
     }
 
-    &:hover {
+    &:hover:not(.active) {
       color: var(--navbar-text);
     }
   }
