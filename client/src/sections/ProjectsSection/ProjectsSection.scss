@@ -1,12 +1,20 @@
 .projects-section {
   &-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 
     gap: 15px;
 
     &-item {
       min-height: 400px;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .projects-section {
+    &-list {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
   }
 }
