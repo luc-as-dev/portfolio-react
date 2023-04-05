@@ -4,6 +4,7 @@ import { KeenSliderOptions, KeenSliderPlugin } from "keen-slider";
 import ContentCard from "../ContentCard/ContentCard";
 import "keen-slider/keen-slider.min.css";
 import "./SliderCard.scss";
+import Card from "../Card/Card";
 
 type Props = {
   options: KeenSliderOptions;
@@ -22,7 +23,7 @@ export default function SliderCard({
   const [sliderRef] = useKeenSlider<HTMLDivElement>(options, plugins);
 
   return (
-    <ContentCard className={classes}>
+    <Card className={classes}>
       <div className="slider-card-slider keen-slider" ref={sliderRef}>
         {children?.map((child, index) =>
           cloneElement(child, {
@@ -31,6 +32,6 @@ export default function SliderCard({
           })
         )}
       </div>
-    </ContentCard>
+    </Card>
   );
 }
