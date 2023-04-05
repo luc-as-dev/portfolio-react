@@ -1,10 +1,10 @@
 import "./HomeSection.scss";
-import ContentImage from "../../components/UI/ContentImage/ContentImage";
-import ContentRow from "../../components/UI/ContentRow/ContentRow";
-import WelcomeCard from "../../components/WelcomeCard/WelcomeCard";
+import ContentImage from "../../UI/ContentImage/ContentImage";
+import ContentRow from "../../UI/ContentRow/ContentRow";
+import WelcomeCard from "../../WelcomeCard/WelcomeCard";
 
-import HERO_IMAGE from "../../assets/hero.jpg";
-import { useAppContext } from "../../context/AppContext";
+import HERO_IMAGE from "../../../assets/hero.jpg";
+import { useAppContext } from "../../../context/AppContext";
 
 type Props = {};
 

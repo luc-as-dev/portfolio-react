@@ -1,8 +1,8 @@
 import "./AboutSection.scss";
-import CompetenceSlider from "../../components/CompetenceSlider/CompetenceSlider";
-import ContentRow from "../../components/UI/ContentRow/ContentRow";
-import { useAppContext } from "../../context/AppContext";
-import SectionHeader from "../../components/SectionHeader/SectionHeader";
+import CompetenceSlider from "../../CompetenceSlider/CompetenceSlider";
+import ContentRow from "../../UI/ContentRow/ContentRow";
+import { useAppContext } from "../../../context/AppContext";
+import SectionHeader from "../../SectionHeader/SectionHeader";
 
 type Props = {};
 

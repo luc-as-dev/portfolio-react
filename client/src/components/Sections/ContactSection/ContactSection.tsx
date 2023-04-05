@@ -1,6 +1,6 @@
 import "./ContactSection.scss";
-import ContentRow from "../../components/UI/ContentRow/ContentRow";
-import { useAppContext } from "../../context/AppContext";
+import ContentRow from "../../UI/ContentRow/ContentRow";
+import { useAppContext } from "../../../context/AppContext";
 
 type Props = {};
 

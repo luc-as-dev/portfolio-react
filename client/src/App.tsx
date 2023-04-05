@@ -2,7 +2,7 @@ import "./App.scss";
 import AppMessage from "./components/UI/AppMessage/AppMessage";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import AppContent from "./sections/AppContent";
+import AppContent from "./components/sections/AppContent";
 
 export default function App() {
   return (

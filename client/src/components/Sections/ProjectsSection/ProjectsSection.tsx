@@ -1,11 +1,11 @@
 import "./ProjectsSection.scss";
-import { useAppContext } from "../../context/AppContext";
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import { useAppContext } from "../../../context/AppContext";
+import ProjectCard from "../../ProjectCard/ProjectCard";
 
-import quizMultiplayerGameImg from "../../assets/projects/quiz-multiplayer-game.png";
-import kanbanImg from "../../assets/projects/kanban.png";
-import spotifyCloneImg from "../../assets/projects/spotify-clone.png";
-import SectionHeader from "../../components/SectionHeader/SectionHeader";
+import quizMultiplayerGameImg from "../../../assets/projects/quiz-multiplayer-game.png";
+import kanbanImg from "../../../assets/projects/kanban.png";
+import spotifyCloneImg from "../../../assets/projects/spotify-clone.png";
+import SectionHeader from "../../SectionHeader/SectionHeader";
 
 type Props = {};
 
