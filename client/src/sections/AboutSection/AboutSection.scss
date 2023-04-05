@@ -1,4 +1,8 @@
 .about-section {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 15px;
 
   &-competence-slider {
     width: 100%;
