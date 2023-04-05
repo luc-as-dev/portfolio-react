@@ -1,5 +1,4 @@
 import "./App.scss";
-import { useState } from "react";
 import AppMessage from "./components/UI/AppMessage/AppMessage";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -19,6 +18,8 @@ export default function App() {
         </p>
       </AppMessage>*/}
 
+      <div className="app-background"></div>
+      <div className="app-eraser"></div>
       <Navbar />
       <AppContent />
       <Footer />

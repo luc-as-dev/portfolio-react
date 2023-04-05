@@ -80,7 +80,6 @@ export default function Navbar({}: Props) {
           }}
         />
       </div>
-      <div className="navbar-eraser"></div>
     </div>
   );
 }

@@ -87,18 +87,6 @@
       }
     }
   }
-
-  &-eraser {
-    position: fixed;
-    z-index: 1;
-
-    background: var(--bg);
-
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: calc(var(--navbar-top) + 10px);
-  }
 }
 
 @media (min-width: 440px) {

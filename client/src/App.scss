@@ -1,6 +1,33 @@
 .app {
   max-width: 1024px;
   margin: 20px auto;
+
+  &-background {
+    position: fixed;
+
+    background-color: var(--bg);
+    background-image: url("./assets/background.webp");
+    background-blend-mode: difference;
+
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+  }
+  &-eraser {
+    position: fixed;
+    z-index: 5;
+
+    background-color: var(--bg);
+    background-image: url("./assets/background.webp");
+    background-blend-mode: difference;
+
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(var(--navbar-top) + 10px);
+  }
 }
 
 @media (max-width: 1044px) {
