@@ -5,10 +5,9 @@
   &-background {
     position: fixed;
 
-    background-color: var(--bg);
     background-image: url("./assets/background.png");
-    background-blend-mode: difference;
-
+    filter: var(--bg-filter);
+    
     top: 0;
     left: 0;
     width: 100vw;
@@ -21,7 +20,7 @@
 
     background-color: var(--bg);
     background-image: url("./assets/background.png");
-    background-blend-mode: difference;
+    filter: var(--bg-filter);
 
     top: 0;
     left: 0;

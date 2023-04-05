@@ -1,9 +1,10 @@
 {
-  "--bg": "#171717",
-  "--app-bg": "#404040",
+  "--bg": "#525252",
+  "--bg-filter": "none",
   "--app-content-bg": "#525252",
 
   "--navbar-bg": "#171717",
+  "--navbar-items-bg": "#525252",
   "--navbar-text": "#e5e5e5",
   "--navbar-text-dimmed": "#a1a1aa",
   "--navbar-text-selected": "#e5e5e5",
