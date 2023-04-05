@@ -1,8 +1,10 @@
 import "./ProjectsSection.scss";
-import QuizGame from "../../components/QuizGame/QuizGame";
-import ContentRow from "../../components/UI/ContentRow/ContentRow";
 import { useAppContext } from "../../context/AppContext";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
+
+import quizMultiplayerGameImg from "../../assets/projects/quiz-multiplayer-game.png";
+import kanbanImg from "../../assets/projects/kanban.png";
+import spotifyCloneImg from "../../assets/projects/spotify-clone.png";
 
 type Props = {};
 
@@ -15,29 +17,34 @@ export default function ProjectsSection({}: Props) {
       id="projects"
       ref={sectionRefs.projects}
     >
-      {/*
-        <ContentRow>
-          <QuizGame localStorageKey="quiz-client-1" />
-          <QuizGame localStorageKey="quiz-client-2" />
-        </ContentRow>
-      */}
-
       <div className="projects-section-list">
         <ProjectCard
           className="projects-section-list-item"
-          background={<div style={{ background: "#1647a3" }}></div>}
+          background={
+            <img
+              className="projects-section-list-item-img"
+              src={quizMultiplayerGameImg}
+            />
+          }
           label="Quiz Multiplayer Game"
           href="https://quiz-multiplayer-game.netlify.app/"
         />
         <ProjectCard
           className="projects-section-list-item"
-          background={<div style={{ background: "#20212c" }}></div>}
+          background={
+            <img className="projects-section-list-item-img" src={kanbanImg} />
+          }
           label="Kanban Board"
           href="https://luc-as-dev-kanban-board.netlify.app/"
         />
         <ProjectCard
           className="projects-section-list-item"
-          background={<div style={{ background: "#121212" }}></div>}
+          background={
+            <img
+              className="projects-section-list-item-img"
+              src={spotifyCloneImg}
+            />
+          }
           label="Spotify Clone"
           href=""
         />

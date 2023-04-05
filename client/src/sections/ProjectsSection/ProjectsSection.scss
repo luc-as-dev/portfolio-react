@@ -1,4 +1,9 @@
 .projects-section {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+
   &-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -6,7 +11,10 @@
     gap: 15px;
 
     &-item {
-      min-height: 400px;
+      aspect-ratio: 267/200;
+      &-img {
+        width: 100%;
+      }
     }
   }
 }
