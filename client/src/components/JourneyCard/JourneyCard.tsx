@@ -1,4 +1,4 @@
-import Card from "../components/UI/Card/Card";
+import Card from "../UI/Card/Card";
 import "./JourneyCard.scss";
 import JourneyItem from "./JourneyItem/JourneyItem";
 
