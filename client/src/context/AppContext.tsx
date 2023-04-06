@@ -28,7 +28,7 @@ type Props = {
   children: ReactNode;
 };
 
-const Y_SCROLL_OFFSET = -78;
+const Y_SCROLL_OFFSET = -83;
 type SectionNamesType = "home" | "about" | "projects" | "contact";
 
 export default function AppContextProvider({ children }: Props) {
