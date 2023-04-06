@@ -3,6 +3,7 @@ import CompetenceSlider from "../../CompetenceSlider/CompetenceSlider";
 import ContentRow from "../../UI/ContentRow/ContentRow";
 import { useAppContext } from "../../../context/AppContext";
 import SectionHeader from "../../SectionHeader/SectionHeader";
+import JourneyCard from "../../../JourneyCard/JourneyCard";
 
 type Props = {};
 
@@ -15,10 +16,7 @@ export default function AboutSection({}: Props) {
       id="about"
       ref={sectionRefs.about}
     >
-      <SectionHeader
-        label="Get to know more about me"
-        description="Take a look at some of my projects"
-      />
+      <SectionHeader label="Get to know more about me" description="" />
       <ContentRow>
         {window.innerWidth > 800 ? (
           <CompetenceSlider
@@ -32,6 +30,7 @@ export default function AboutSection({}: Props) {
           />
         )}
       </ContentRow>
+      <JourneyCard className="about-section-journey" />
     </section>
   );
 }

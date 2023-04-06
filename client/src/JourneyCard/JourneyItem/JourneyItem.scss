@@ -1,0 +1,30 @@
+.journey-item {
+  display: flex;
+
+  color: var(--text);
+
+  gap: 10px;
+
+  &-left,
+  &-right {
+    padding: 10px;
+  }
+  
+  &-left {
+    flex-shrink: 0;
+    border-right: 1px solid var(--text-dimmed);
+    width: 80px;
+  }
+  
+  &-right {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 3px;
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+}
