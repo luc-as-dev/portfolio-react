@@ -12,52 +12,57 @@ export default function JourneyCard({ className }: Props) {
       className={`journey-card ${className || ""}`.trim()}
       classNameInner="journey-card-inner"
     >
-      <h2 className="journey-card-inner-label">My coding journey</h2>
+      <h2 className="journey-card-inner-label">My Coding Journey</h2>
+      <div className="journey-card-inner-content">
+        <JourneyItem date="2014" title={"The beginning of my new passion"}>
+          <p>I started to learn Java when i was 15 years old.</p>
+        </JourneyItem>
 
-      <JourneyItem date="2014" title={"The beginning of my new passion"}>
-        <p>I started to learn Java when i was 15 years old.</p>
-      </JourneyItem>
+        <JourneyItem date="2015" title={"Mixing code with electricity"}>
+          <p>
+            I went to a intro course once a week and learned the basic of
+            Arduino, C++.
+          </p>
+        </JourneyItem>
 
-      <JourneyItem date="2015" title={"Mixing code with electricity"}>
-        <p>
-          I went to a intro course once a week and learned the basic of Arduino,
-          C++.
-        </p>
-      </JourneyItem>
+        <JourneyItem date="2015" title={"Started to see the world in 3D"}>
+          <p>
+            My desire to create games led me to start learning Unity3D and C#.
+          </p>
+        </JourneyItem>
 
-      <JourneyItem date="2015" title={"Started to see the world in 3D"}>
-        <p>
-          My desire to create games led me to start learning Unity3D and C#.
-        </p>
-      </JourneyItem>
+        <JourneyItem
+          date="2015 - 2018"
+          title={"Every good story needs a snake"}
+        >
+          <p>
+            Went to Möckeln gymnasiet (Teknikprogrammet) and enhanced my math
+            and programming (Python).
+          </p>
+        </JourneyItem>
 
-      <JourneyItem date="2015 - 2018" title={"Every good story needs a snake"}>
-        <p>
-          Went to Möckeln gymnasiet (Teknikprogrammet) and enhanced my math and
-          programming (Python).
-        </p>
-      </JourneyItem>
+        <JourneyItem date="2019" title={"University"}>
+          <p>Went to Örebro University and dropped out 6 months in.</p>
+          <p>Enhanced my math and was introduced to matrices, MATHLAB and C.</p>
+        </JourneyItem>
 
-      <JourneyItem date="2019" title={"University"}>
-        <p>Went to Örebro University and dropped out 6 months in.</p>
-        <p>Enhanced my math and was introduced to matrices, MATHLAB and C.</p>
-      </JourneyItem>
+        <JourneyItem date="2020-2022" title={"A brake from all the code"}>
+          <p>
+            Work and spend most of my free time in the workshop, tuning cars and
+            building audio system.
+          </p>
+        </JourneyItem>
 
-      <JourneyItem date="2020-2022" title={"A brake from all the code"}>
-        <p>
-          Work and spend most of my free time in the workshop, tuning cars and
-          building audio system.
-        </p>
-      </JourneyItem>
-
-      <JourneyItem
-        date="2022-2023"
-        title={"Brake is over, I'm going to work as a developer"}
-      >
-        <p>
-          Found out about Techover and joined their bootcamp, finished in April
-        </p>
-      </JourneyItem>
+        <JourneyItem
+          date="2022-2023"
+          title={"Brake is over, I'm going to work as a developer"}
+        >
+          <p>
+            Found out about Techover and joined their bootcamp, finished in
+            April
+          </p>
+        </JourneyItem>
+      </div>
 
       {/*  
       <p>Math 1c, 2c, 3c, 4 and 5</p>

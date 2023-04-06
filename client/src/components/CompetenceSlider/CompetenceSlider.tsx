@@ -12,6 +12,7 @@ export default function CompetenceSlider({ perView, className }: Props) {
   const classes = `${className ? " " + className : ""}`;
   return (
     <SliderCard
+      label="My Competences"
       className={classes}
       options={{
         mode: "free-snap",
