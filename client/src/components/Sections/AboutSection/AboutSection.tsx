@@ -18,11 +18,7 @@ export default function AboutSection({}: Props) {
     >
       <SectionHeader
         label="Get to know more about me"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem
-      officia ipsum, obcaecati labore perferendis non. Culpa nulla dolorem
-      fugiat unde repudiandae, ad suscipit? Repellat, similique id aliquid
-      dolore illum obcaecati excepturi placeat odio! Aut accusantium suscipit ex
-      officiis provident!"
+        description="Look at some of my competences and experience."
       />
       <ContentRow>
         {window.innerWidth > 800 ? (
