@@ -3,4 +3,28 @@
   flex-direction: column;
 
   gap: 15px;
+  
+  &-content {
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;    
+
+    gap: inherit;
+
+    &-hero {
+      flex: 300px 1;
+      aspect-ratio: 1;
+
+      &-img {
+        border-radius: inherit;
+        opacity: 70%;
+
+        width: 100%;
+      }
+    }
+    
+    &-form {
+      flex: 500px 1;
+    }
+  }
 }

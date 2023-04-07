@@ -1,0 +1,41 @@
+.contact-form {
+  &-inner {
+    font-size: 18px;
+    color: var(--text);
+
+    padding: 20px;
+
+    &-name,
+    &-subject,
+    &-contact {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      font-size: 16px;
+
+      border-bottom: 1px solid var(--text-dimmed);
+      caret-color: var(--text);
+      color: inherit;
+      
+      padding: 2px 8px;
+    }
+
+    &-name:focus,
+    &-subject:focus,
+    &-contact:focus {
+      background: var(--bg);
+    }
+
+    &-name {
+      //min-width: 30ch;
+    }
+
+    &-subject {
+      //min-width: 40ch;
+    }
+
+    &-contact {
+      //min-width: 50ch;
+    }
+  }
+}
