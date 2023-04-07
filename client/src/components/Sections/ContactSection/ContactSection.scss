@@ -14,6 +14,7 @@
     &-hero {
       flex: 300px 1;
       aspect-ratio: 1;
+      max-width: 500px;
 
       &-img {
         border-radius: inherit;
@@ -24,7 +25,7 @@
     }
     
     &-form {
-      flex: 500px 1;
+      flex: 300px 1;
     }
   }
 }

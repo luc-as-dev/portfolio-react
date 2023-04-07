@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Card from "../UI/Card/Card";
+import TextInput from "../UI/TextInput/TextInput";
 import "./ContactForm.scss";
 
 type Props = {
@@ -6,28 +8,35 @@ type Props = {
 };
 
 export default function ContactForm({ className }: Props) {
+  const [name, setName] = useState<string>("");
+  const [subject, setSubject] = useState<string>("");
+  const [contact, setContact] = useState<string>("");
+
   return (
     <Card
       className={`contact-form ${className || ""}`.trim()}
       classNameInner="contact-form-inner"
     >
       <p>
-        My name is{" "}
-        <input
-          className="contact-form-inner-name"
+        Hey! I am{" "}
+        <TextInput
+          value={name}
+          setValue={setName}
           placeholder="John Doe from Acme"
         />{" "}
         and I have a{" "}
-        <input
-          className="contact-form-inner-subject"
+        <TextInput
+          value={subject}
+          setValue={setSubject}
           placeholder="project, fulltime job, etc"
         />{" "}
-        that i think will fit you. You can reach me at{" "}
-        <input
-          className="contact-form-inner-contact"
-          placeholder="john.doe@acme.com, +46 712 34 56 78"
+        which I believe will interest you. You can contact me at{" "}
+        <TextInput
+          value={contact}
+          setValue={setContact}
+          placeholder="john.doe@example.com, +46712345678"
         />{" "}
-        for more details.
+        for more info.
       </p>
     </Card>
   );

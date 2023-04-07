@@ -1,0 +1,20 @@
+.text-input {
+  font-size: 0.9em;
+
+  outline: none;
+  background-color: transparent;
+  color: var(--text);
+  border-bottom: 1px solid var(--text-dimmed);
+  caret-color: var(--text);
+
+  width: fit-content;
+  padding: 0 0.5ch;
+
+  &.empty {
+    color: var(--text-placeholder);
+  }
+
+  &:focus {
+    //background: var(--bg);
+  }
+}

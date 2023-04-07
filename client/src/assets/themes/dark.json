@@ -11,6 +11,7 @@
 
   "--text": "#e5e5e5",
   "--text-dimmed": "#a1a1aa",
+  "--text-placeholder": "#e5e5e555",
   "--text-link": "#292929",
   "--text-link-dimmed": "#494949",
 
