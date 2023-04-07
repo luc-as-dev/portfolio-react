@@ -10,11 +10,10 @@
   width: fit-content;
   padding: 0 0.5ch;
 
-  &.empty {
-    color: var(--text-placeholder);
-  }
+  &:empty:before {
+    content: attr(placeholder);
+    pointer-events: none;
 
-  &:focus {
-    //background: var(--bg);
+    color: var(--text-placeholder);
   }
 }

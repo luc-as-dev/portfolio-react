@@ -1,4 +1,4 @@
-import { KeyboardEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, KeyboardEvent, useEffect, useRef } from "react";
 import "./TextInput.scss";
 
 type Props = {
@@ -15,54 +15,35 @@ export default function TextInput({
   className,
 }: Props) {
   const inputRef = useRef<HTMLSpanElement>(null);
-  const [isEditing, setIsEditing] = useState<boolean>(false);
 
   useEffect(() => {
-    if (isEditing && inputRef.current) {
+    if (inputRef.current && inputRef.current.innerHTML !== value) {
       inputRef.current.innerHTML = value;
-      inputRef.current.focus();
     }
-  }, [isEditing]);
-
-  function onClick() {
-    setIsEditing((s) => !s);
-  }
-
-  function onBlur() {
-    if (inputRef.current) setValue(inputRef.current.innerHTML);
-    setIsEditing(false);
-  }
+  }, [value]);
 
   function onKeyDown(e: KeyboardEvent<HTMLSpanElement>) {
     if (e.key === "Enter") {
-      onBlur();
+      if (inputRef.current) {
+        inputRef.current.blur();
+      }
     }
   }
 
-  if (isEditing) {
-    return (
-      <span
-        className={`text-input editing ${className || ""}`.trim()}
-        ref={inputRef}
-        contentEditable
-        onBlur={onBlur}
-        onKeyDown={onKeyDown}
-      ></span>
-    );
-  } else if (!value) {
-    return (
-      <span
-        className={`text-input empty ${className || ""}`.trim()}
-        onClick={onClick}
-      >
-        {placeholder}
-      </span>
-    );
+  function onInput(e: FormEvent<HTMLSpanElement>) {
+    if (e.currentTarget.innerHTML) {
+      setValue(e.currentTarget.innerHTML);
+    }
   }
 
   return (
-    <span className={`text-input ${className || ""}`.trim()} onClick={onClick}>
-      {value}
-    </span>
+    <span
+      className={`text-input ${className || ""}`.trim()}
+      ref={inputRef}
+      contentEditable
+      placeholder={placeholder}
+      onKeyDown={onKeyDown}
+      onInput={onInput}
+    ></span>
   );
 }

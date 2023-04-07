@@ -19,22 +19,18 @@ export default function ContactForm({ className }: Props) {
     >
       <p>
         Hey! I am{" "}
-        <TextInput
-          value={name}
-          setValue={setName}
-          placeholder="John Doe from Acme"
-        />{" "}
-        and I have a{" "}
+        <TextInput value={name} setValue={setName} placeholder="name" /> and I
+        have a{" "}
         <TextInput
           value={subject}
           setValue={setSubject}
-          placeholder="project, fulltime job, etc"
+          placeholder="project, full-time job, etc"
         />{" "}
         which I believe will interest you. You can contact me at{" "}
         <TextInput
           value={contact}
           setValue={setContact}
-          placeholder="john.doe@example.com, +46712345678"
+          placeholder="mail or phone number"
         />{" "}
         for more info.
       </p>
