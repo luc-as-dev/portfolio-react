@@ -6,7 +6,7 @@ import AppContent from "./components/Sections/AppContent";
 import { useEffect, useRef, useState } from "react";
 
 const OFFSET_Y = 68;
-const AUTO_SCROLL_THRESHOLD = 100;
+const AUTO_SCROLL_THRESHOLD = 80;
 
 export default function App() {
   const [activeSectionName, setActiveSectionName] = useState("home");
