@@ -44,7 +44,7 @@ export default function SlideSwitch({ alternatives, value, className }: Props) {
         });
       }
 
-      const factor = 2;
+      const factor = 4;
       const duration = factor * Math.abs(newLeft - oldLeft);
 
       api.start({

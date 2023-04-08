@@ -1,5 +1,4 @@
 import "./ProjectsSection.scss";
-import { useAppContext } from "../../../context/AppContext";
 import ProjectCard from "../../ProjectCard/ProjectCard";
 
 import quizMultiplayerGameImg from "../../../assets/projects/quiz-multiplayer-game.png";
@@ -10,14 +9,8 @@ import SectionHeader from "../../SectionHeader/SectionHeader";
 type Props = {};
 
 export default function ProjectsSection({}: Props) {
-  const { sectionRefs } = useAppContext();
-
   return (
-    <section
-      className="projects-section"
-      id="projects"
-      ref={sectionRefs.projects}
-    >
+    <section className="projects-section" id="projects">
       <SectionHeader
         label="Projects"
         description="Take a look at some of my projects"

@@ -1,14 +1,12 @@
 import { Moon, Settings, Sun } from "react-feather";
-import { useAppContext } from "../../context/AppContext";
 import { useThemeContext } from "../../context/ThemeContext";
 import SlideSwitch from "../UI/SlideSwitch/SlideSwitch";
 import "./Navbar.scss";
 
-type Props = {};
+type Props = { activeSectionName: string; autoScroll: (id: string) => void };
 
-export default function Navbar({}: Props) {
+export default function Navbar({ activeSectionName, autoScroll }: Props) {
   const { themes, currentTheme, setTheme } = useThemeContext();
-  const { activeSectionName, toSection } = useAppContext();
 
   return (
     <div className="navbar">
@@ -54,25 +52,25 @@ export default function Navbar({}: Props) {
           value={activeSectionName}
           alternatives={{
             home: {
-              onClick: () => toSection("home"),
+              onClick: () => autoScroll("home"),
               node: (
                 <div className="navbar-inner-section-switch-item">Home</div>
               ),
             },
             about: {
-              onClick: () => toSection("about"),
+              onClick: () => autoScroll("about"),
               node: (
                 <div className="navbar-inner-section-switch-item">About</div>
               ),
             },
             projects: {
-              onClick: () => toSection("projects"),
+              onClick: () => autoScroll("projects"),
               node: (
                 <div className="navbar-inner-section-switch-item">Projects</div>
               ),
             },
             contact: {
-              onClick: () => toSection("contact"),
+              onClick: () => autoScroll("contact"),
               node: (
                 <div className="navbar-inner-section-switch-item">Contact</div>
               ),

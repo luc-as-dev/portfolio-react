@@ -4,9 +4,7 @@ import ContactSection from "./ContactSection/ContactSection";
 import HomeSection from "./HomeSection/HomeSection";
 import ProjectsSection from "./ProjectsSection/ProjectsSection";
 
-type Props = {};
-
-export default function AppContent({}: Props) {
+export default function AppContent() {
   return (
     <div className="app-content">
       <HomeSection />
