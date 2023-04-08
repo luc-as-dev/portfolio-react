@@ -6,7 +6,7 @@ import AppContent from "./components/Sections/AppContent";
 import { useEffect, useRef, useState } from "react";
 
 const OFFSET_Y = 68;
-const AUTO_SCROLL_THRESHOLD = 50;
+const AUTO_SCROLL_THRESHOLD = 100;
 
 export default function App() {
   const [activeSectionName, setActiveSectionName] = useState("home");
@@ -91,7 +91,11 @@ export default function App() {
     const targetPosition =
       scrollDirection === "down"
         ? element.offsetTop
-        : element.offsetTop + element.offsetHeight - innerHeight + 100;
+        : element.offsetTop +
+          element.offsetHeight -
+          innerHeight +
+          AUTO_SCROLL_THRESHOLD +
+          OFFSET_Y;
     const distance = targetPosition - startPosition;
     let startTime: number | null = null;
 
