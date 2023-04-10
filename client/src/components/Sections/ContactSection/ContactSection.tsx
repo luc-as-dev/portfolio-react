@@ -4,6 +4,7 @@ import ContactForm from "../../ContactForm/ContactForm";
 import Card from "../../UI/Card/Card";
 
 import heroContactImg from "../../../assets/hero-contact.png";
+import ContactMe from "../../ContactMe/ContactMe";
 
 type Props = {};
 
@@ -12,7 +13,7 @@ export default function ContactSection({}: Props) {
     <section className="contact-section" id="contact">
       <SectionHeader
         label="Contact me"
-        description="Feel free to contact me or use the form and i will contact you!"
+        description="Feel free to contact me!"
       />
       <div className="contact-section-content">
         <Card className="contact-section-content-hero">
@@ -21,7 +22,10 @@ export default function ContactSection({}: Props) {
             src={heroContactImg}
           />
         </Card>
+        <ContactMe />
+        {/* 
         <ContactForm className="contact-section-content-form" />
+        */}
       </div>
     </section>
   );
