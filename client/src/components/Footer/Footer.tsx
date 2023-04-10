@@ -31,7 +31,10 @@ export default function Footer() {
         </p>
         <p>
           Linkedin -{" "}
-          <a href="https://www.linkedin.com/in/lucas-karlsson-luc-as-dev/">
+          <a
+            href="https://www.linkedin.com/in/lucas-karlsson-luc-as-dev/"
+            target="_blank"
+          >
             Lucas Karlsson
           </a>
         </p>
