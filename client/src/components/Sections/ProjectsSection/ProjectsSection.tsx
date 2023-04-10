@@ -13,7 +13,7 @@ export default function ProjectsSection({}: Props) {
     <section className="projects-section" id="projects">
       <SectionHeader
         label="Projects"
-        description="Take a look at some of my projects"
+        description="Take a look at some of my latest projects"
       />
       <div className="projects-section-list">
         <ProjectCard
