@@ -1,19 +1,49 @@
 import "./HomeSection.scss";
-import ContentImage from "../../UI/ContentImage/ContentImage";
-import ContentRow from "../../UI/ContentRow/ContentRow";
-import WelcomeCard from "../../WelcomeCard/WelcomeCard";
+import Card from "../../UI/Card/Card";
 
-import HERO_IMAGE from "../../../assets/hero.jpg";
+import HERO_IMAGE from "../../../assets/hero-contact.png";
+import githubIcon from "../../../assets/icons/github.png";
+import linkedinIcon from "../../../assets/icons/linkedin.png";
 
 type Props = {};
 
 export default function HomeSection({}: Props) {
   return (
     <section className="home-section" id="home">
-      <ContentRow className="home-section-row-1">
-        <WelcomeCard className="home-section-row-1-welcome" />
-        <ContentImage className="home-section-row-1-hero" src={HERO_IMAGE} />
-      </ContentRow>
+      <div className="home-section-me">
+        <Card
+          className="home-section-me-greeting"
+          classNameInner="home-section-me-greeting-inner"
+        >
+          <h2 className="home-section-me-greeting-inner-title">
+            Greetings! I'm Lucas, the dedicated coder you've been looking for.
+          </h2>
+          <p className="home-section-me-greeting-inner-text">
+            As a passionate programmer with a knack for pattern recognition,
+            I've gained proficiency in various languages through years of
+            self-learning, and I'm eager to make a mark in the programming
+            world.
+          </p>
+          <div className="home-section-me-greeting-inner-socials">
+            <a
+              href="https://github.com/luc-as-dev"
+              className="home-section-me-greeting-inner-socials-item"
+            >
+              <img src={githubIcon} alt="github icon" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lucas-karlsson-luc-as-dev/"
+              className="home-section-me-greeting-inner-socials-item"
+            >
+              <img src={linkedinIcon} alt="github icon" />
+            </a>
+          </div>
+        </Card>
+        <Card className="home-section-me-hero">
+          <img className="home-section-me-hero-img" src={HERO_IMAGE} />
+        </Card>
+      </div>
+      <div className="home-section-chips"></div>
     </section>
   );
 }
