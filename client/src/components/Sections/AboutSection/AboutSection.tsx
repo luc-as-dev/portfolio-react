@@ -4,6 +4,10 @@ import ContentRow from "../../UI/ContentRow/ContentRow";
 import SectionHeader from "../../SectionHeader/SectionHeader";
 import JourneyCard from "../../JourneyCard/JourneyCard";
 
+import heroImg from "../../../assets/hero-contact.png";
+import Card from "../../UI/Card/Card";
+import ContactMe from "../../ContactMe/ContactMe";
+
 type Props = {};
 
 export default function AboutSection({}: Props) {
@@ -27,6 +31,12 @@ export default function AboutSection({}: Props) {
         )}
       </ContentRow>
       <JourneyCard className="about-section-journey" />
+      <div className="about-section-contact">
+        <Card className="about-section-contact-hero">
+          <img className="about-section-contact-hero-img" src={heroImg} />
+        </Card>
+        <ContactMe />
+      </div>
     </section>
   );
 }

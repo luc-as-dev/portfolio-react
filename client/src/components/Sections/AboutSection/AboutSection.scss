@@ -7,4 +7,25 @@
   &-competence-slider {
     width: 100%;
   }
+
+  &-contact {
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    flex-wrap: wrap;    
+
+    gap: inherit;
+
+    &-hero {
+      flex: 300px 0;
+      aspect-ratio: 1;
+      max-width: 500px;
+
+      &-img {
+        border-radius: inherit;
+
+        width: 100%;
+      }
+    }
+  }
 }

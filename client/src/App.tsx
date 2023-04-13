@@ -1,5 +1,4 @@
 import "./App.scss";
-import AppMessage from "./components/UI/AppMessage/AppMessage";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import AppContent from "./components/Sections/AppContent";
@@ -19,10 +18,9 @@ export default function App() {
       }
 
       const sections = [
-        { id: "home", next: "about", prev: null },
-        { id: "about", next: "projects", prev: "home" },
-        { id: "projects", next: "contact", prev: "about" },
-        { id: "contact", next: null, prev: "projects" },
+        { id: "home", next: "projects", prev: null },
+        { id: "projects", next: "about", prev: "home" },
+        { id: "about", next: null, prev: "projects" },
       ];
       let activeSection = "";
 

@@ -57,22 +57,16 @@ export default function Navbar({ activeSectionName, autoScroll }: Props) {
                 <div className="navbar-inner-section-switch-item">Home</div>
               ),
             },
-            about: {
-              onClick: () => autoScroll("about"),
-              node: (
-                <div className="navbar-inner-section-switch-item">About</div>
-              ),
-            },
             projects: {
               onClick: () => autoScroll("projects"),
               node: (
                 <div className="navbar-inner-section-switch-item">Projects</div>
               ),
             },
-            contact: {
-              onClick: () => autoScroll("contact"),
+            about: {
+              onClick: () => autoScroll("about"),
               node: (
-                <div className="navbar-inner-section-switch-item">Contact</div>
+                <div className="navbar-inner-section-switch-item">About</div>
               ),
             },
           }}
