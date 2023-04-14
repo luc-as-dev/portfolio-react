@@ -1,18 +1,17 @@
 import "./HomeSection.scss";
 import Card from "../../UI/Card/Card";
+import Chip from "../../UI/Chip/Chip";
+import { forwardRef } from "react";
 
 import HERO_IMAGE from "../../../assets/hero-contact.png";
 import githubIcon from "../../../assets/icons/github.png";
 import linkedinIcon from "../../../assets/icons/linkedin.png";
 
 import competences from "../../../assets/data/competences.json";
-import Chip from "../../UI/Chip/Chip";
 
-type Props = {};
-
-export default function HomeSection({}: Props) {
+const HomeSection = forwardRef<HTMLElement>(({}, ref) => {
   return (
-    <section className="home-section" id="home">
+    <section className="home-section" ref={ref} id="home">
       <div className="home-section-me">
         <Card className="home-section-me-hero">
           <img className="home-section-me-hero-img" src={HERO_IMAGE} />
@@ -56,4 +55,6 @@ export default function HomeSection({}: Props) {
       </Card>
     </section>
   );
-}
+});
+
+export default HomeSection;

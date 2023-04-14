@@ -1,16 +1,15 @@
 import "./ProjectsSection.scss";
+import SectionHeader from "../../SectionHeader/SectionHeader";
 import ProjectCard from "../../ProjectCard/ProjectCard";
+import { forwardRef } from "react";
 
 import quizMultiplayerGameImg from "../../../assets/projects/quiz-multiplayer-game.png";
 import kanbanImg from "../../../assets/projects/kanban.png";
 import spotifyCloneImg from "../../../assets/projects/spotify-clone.png";
-import SectionHeader from "../../SectionHeader/SectionHeader";
 
-type Props = {};
-
-export default function ProjectsSection({}: Props) {
+const ProjectsSection = forwardRef<HTMLElement>(({}, ref) => {
   return (
-    <section className="projects-section" id="projects">
+    <section className="projects-section" ref={ref} id="projects">
       <SectionHeader
         label="Projects"
         description="Take a look at some of my latest projects"
@@ -40,4 +39,6 @@ export default function ProjectsSection({}: Props) {
       </div>
     </section>
   );
-}
+});
+
+export default ProjectsSection;

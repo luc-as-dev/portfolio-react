@@ -3,131 +3,54 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import AppContent from "./components/Sections/AppContent";
 import { useEffect, useRef, useState } from "react";
+import { scroller } from "react-scroll";
 
 const OFFSET_Y = 68;
-const AUTO_SCROLL_THRESHOLD = 80;
 
 export default function App() {
   const [activeSectionName, setActiveSectionName] = useState("home");
-  const isAutoScrolling = useRef(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (isAutoScrolling.current) {
-        return;
-      }
-
-      const sections = [
-        { id: "home", next: "projects", prev: null },
-        { id: "projects", next: "about", prev: "home" },
-        { id: "about", next: null, prev: "projects" },
-      ];
-      let activeSection = "";
-
-      for (const section of sections) {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= OFFSET_Y + 150 && rect.bottom > OFFSET_Y - 150) {
-            activeSection = section.id;
-            break;
-          }
-        }
-      }
-
-      if (activeSection && activeSection !== activeSectionName) {
-        setActiveSectionName(activeSection);
-      }
-
-      const currentSection = sections.find((s) => s.id === activeSection);
-
-      if (currentSection) {
-        const element = document.getElementById(currentSection?.id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (
-            rect.top >= OFFSET_Y + AUTO_SCROLL_THRESHOLD &&
-            currentSection.prev
-          ) {
-            autoScroll(currentSection.prev, 700, "up");
-          } else if (
-            rect.bottom <= window.innerHeight - AUTO_SCROLL_THRESHOLD &&
-            currentSection.next
-          ) {
-            autoScroll(currentSection.next, 700, "down");
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, [activeSectionName]);
-
-  const autoScroll = (
-    id: string,
-    duration: number = 1500,
-    scrollDirection: "up" | "down" = "down"
-  ) => {
-    const section = document.getElementById(id);
-    if (section) {
-      isAutoScrolling.current = true;
-      setActiveSectionName(id);
-      customScrollTo(section, duration, scrollDirection);
-    }
+  const sections = {
+    home: { ref: useRef<HTMLElement>(null) },
+    projects: { ref: useRef<HTMLElement>(null) },
+    about: { ref: useRef<HTMLElement>(null) },
   };
 
-  function customScrollTo(
-    element: HTMLElement,
-    duration: number,
-    scrollDirection: "up" | "down"
-  ) {
-    const startPosition = window.pageYOffset;
-    const targetPosition =
-      scrollDirection === "down"
-        ? element.offsetTop
-        : element.offsetTop +
-          element.offsetHeight -
-          innerHeight +
-          AUTO_SCROLL_THRESHOLD +
-          OFFSET_Y;
-    const distance = targetPosition - startPosition;
-    let startTime: number | null = null;
-
-    function animation(currentTime: number) {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime!;
-      const progress = Math.min(timeElapsed / duration, 1);
-
-      const easeOutCubic = (t: number) => --t * t * t + 1;
-      const ease = easeOutCubic(progress);
-
-      const adjustedStartPosition = Math.min(
-        startPosition,
-        Math.max(window.pageYOffset, startPosition - AUTO_SCROLL_THRESHOLD)
-      );
-
-      window.scrollTo(0, adjustedStartPosition + distance * ease);
-
-      if (timeElapsed < duration) {
-        window.requestAnimationFrame(animation);
-      } else {
-        isAutoScrolling.current = false;
+  useEffect(() => {
+    const handleScroll = () => {
+      for (const [key, value] of Object.entries(sections)) {
+        const sectionRef = value.ref.current;
+        if (sectionRef) {
+          const top = sectionRef.getBoundingClientRect().top;
+          if (top + OFFSET_Y >= 0 && top <= window.innerHeight - OFFSET_Y) {
+            setActiveSectionName(key);
+          }
+        }
       }
-    }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [sections]);
 
-    window.requestAnimationFrame(animation);
+  function scrollToSection(id: "home" | "projects" | "about") {
+    const sectionRef = sections[id].ref.current;
+    if (sectionRef) {
+      scroller.scrollTo(id, {
+        duration: 1000,
+        smooth: true,
+        offset: -OFFSET_Y,
+      });
+    }
   }
 
   return (
     <div className="app">
       <div className="app-background"></div>
       <div className="app-eraser"></div>
-      <Navbar activeSectionName={activeSectionName} autoScroll={autoScroll} />
-      <AppContent />
+      <Navbar
+        activeSectionName={activeSectionName}
+        scrollToSection={scrollToSection}
+      />
+      <AppContent sections={sections} />
       <Footer />
     </div>
   );

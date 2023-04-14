@@ -3,9 +3,12 @@ import { useThemeContext } from "../../context/ThemeContext";
 import SlideSwitch from "../UI/SlideSwitch/SlideSwitch";
 import "./Navbar.scss";
 
-type Props = { activeSectionName: string; autoScroll: (id: string) => void };
+type Props = {
+  activeSectionName: string;
+  scrollToSection: (id: "home" | "projects" | "about") => void;
+};
 
-export default function Navbar({ activeSectionName, autoScroll }: Props) {
+export default function Navbar({ activeSectionName, scrollToSection }: Props) {
   const { themes, currentTheme, setTheme } = useThemeContext();
 
   return (
@@ -52,19 +55,19 @@ export default function Navbar({ activeSectionName, autoScroll }: Props) {
           value={activeSectionName}
           alternatives={{
             home: {
-              onClick: () => autoScroll("home"),
+              onClick: () => scrollToSection("home"),
               node: (
                 <div className="navbar-inner-section-switch-item">Home</div>
               ),
             },
             projects: {
-              onClick: () => autoScroll("projects"),
+              onClick: () => scrollToSection("projects"),
               node: (
                 <div className="navbar-inner-section-switch-item">Projects</div>
               ),
             },
             about: {
-              onClick: () => autoScroll("about"),
+              onClick: () => scrollToSection("about"),
               node: (
                 <div className="navbar-inner-section-switch-item">About</div>
               ),
