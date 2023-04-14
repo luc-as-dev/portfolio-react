@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
 
-  background-color: var(--navbar-items-bg);
+  background-color: var(--detail-bg);
 
   padding: 3px;
   gap: 8px;
@@ -13,7 +13,7 @@
     z-index: 2;
     position: absolute;
     
-    background-color: var(--navbar-bg);
+    background-color: var(--detail-contrast-bg);
 
     top: 3px;
     left: 0;
@@ -30,7 +30,7 @@
     cursor: pointer;
     user-select: none;
 
-    color: var(--navbar-text-dimmed);
+    color: var(--text-dimmed);
 
     font-size: 13px;
     font-weight: 600;
@@ -42,11 +42,11 @@
       transition-duration: 100ms;
       transition-property: color;
       
-      color: var(--navbar-text-selected);
+      color: var(--text);
     }
 
     &:hover:not(.active) {
-      color: var(--navbar-text);
+      color: var(--text);
     }
   }
 }

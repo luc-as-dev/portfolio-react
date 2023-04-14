@@ -4,8 +4,8 @@ import Chip from "../../UI/Chip/Chip";
 import { forwardRef } from "react";
 
 import HERO_IMAGE from "../../../assets/hero-contact.png";
-import githubIcon from "../../../assets/icons/github.png";
-import linkedinIcon from "../../../assets/icons/linkedin.png";
+import githubIcon from "../../../assets/icons/github.svg";
+import linkedinIcon from "../../../assets/icons/linkedin.svg";
 
 import competences from "../../../assets/data/competences.json";
 

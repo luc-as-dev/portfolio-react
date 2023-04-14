@@ -5,22 +5,23 @@
   &-background {
     position: fixed;
 
-    background-image: url("./assets/background.png");
-    filter: var(--bg-filter);
+    background-image: url("/bg.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: auto 98%;
+    
     
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-
+    
   }
   &-eraser {
     position: fixed;
     z-index: 5;
-
+    
     background-color: var(--bg);
-    background-image: url("./assets/background.png");
-    filter: var(--bg-filter);
 
     top: 0;
     left: 0;

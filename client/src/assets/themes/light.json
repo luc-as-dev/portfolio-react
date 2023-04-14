@@ -1,13 +1,10 @@
 {
-  "--bg": "#f5f5f5",
-  "--bg-filter": "invert(.9)",
-  "--app-content-bg": "#e5e5e5",
+  "--bg": "#fafafa",
+  "--detail-bg": "#e5e5e5bb",
+  "--detail-contrast-bg": "#fafafa",
+  "--blur-bg": "#d4d4d466",
 
-  "--navbar-bg": "#262626",
-  "--navbar-items-bg": "#d4d4d4",
-  "--navbar-text": "#171717",
-  "--navbar-text-dimmed": "#404040",
-  "--navbar-text-selected": "#d4d4d4",
+  "--navbar-blur-bg": "#d4d4d444",
 
   "--text": "#222",
   "--text-dimmed": "#777",
