@@ -5,6 +5,9 @@ import HERO_IMAGE from "../../../assets/hero-contact.png";
 import githubIcon from "../../../assets/icons/github.png";
 import linkedinIcon from "../../../assets/icons/linkedin.png";
 
+import competences from "../../../assets/data/competences.json";
+import Chip from "../../UI/Chip/Chip";
+
 type Props = {};
 
 export default function HomeSection({}: Props) {
@@ -43,7 +46,14 @@ export default function HomeSection({}: Props) {
           <img className="home-section-me-hero-img" src={HERO_IMAGE} />
         </Card>
       </div>
-      <div className="home-section-chips"></div>
+      <Card
+        className="home-section-chips"
+        classNameInner="home-section-chips-inner"
+      >
+        {Object.values(competences).map(({ name }) => (
+          <Chip name={name} />
+        ))}
+      </Card>
     </section>
   );
 }

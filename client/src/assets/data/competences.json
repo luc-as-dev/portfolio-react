@@ -1,0 +1,38 @@
+{
+  "javascript": {
+    "name": "JavaScript"
+  },
+  "typescript": {
+    "name": "TypeScript"
+  },
+  "python": {
+    "name": "Python"
+  },
+  "html": {
+    "name": "HTML"
+  },
+  "css": {
+    "name": "CSS"
+  },
+  "react": {
+    "name": "React"
+  },
+  "next": {
+    "name": "Next.js"
+  },
+  "sass": {
+    "name": "Sass"
+  },
+  "tailwind": {
+    "name": "Tailwind"
+  },
+  "mongodb": {
+    "name": "MongoDB"
+  },
+  "git": {
+    "name": "Git"
+  },
+  "socketio": {
+    "name": "Socket.io"
+  }
+}

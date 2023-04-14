@@ -1,0 +1,10 @@
+.chip {
+  cursor: default;
+  background-color: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--text);
+  //border: 1px solid #39d353;
+
+  padding: 2px 8px;
+  border-radius: 8px;
+}
