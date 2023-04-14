@@ -14,6 +14,9 @@ export default function HomeSection({}: Props) {
   return (
     <section className="home-section" id="home">
       <div className="home-section-me">
+        <Card className="home-section-me-hero">
+          <img className="home-section-me-hero-img" src={HERO_IMAGE} />
+        </Card>
         <Card
           className="home-section-me-greeting"
           classNameInner="home-section-me-greeting-inner"
@@ -41,9 +44,6 @@ export default function HomeSection({}: Props) {
               <img src={linkedinIcon} alt="github icon" />
             </a>
           </div>
-        </Card>
-        <Card className="home-section-me-hero">
-          <img className="home-section-me-hero-img" src={HERO_IMAGE} />
         </Card>
       </div>
       <Card
