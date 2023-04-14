@@ -1,5 +1,4 @@
 import Card from "../UI/Card/Card";
-import ContentCard from "../UI/ContentCard/ContentCard";
 import "./SectionHeader.scss";
 
 type Props = {
