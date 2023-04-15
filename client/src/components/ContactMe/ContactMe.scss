@@ -1,29 +1,51 @@
 .contact-me {
-  display: flex;
-  flex-direction: column;
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-  gap: 8px;
-
-  &-link {
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-
-    font-size: 18px;
-    font-weight: 700;
-
-    background-color: #39d35366;
-    color: #e5e5e5;
-
-    padding: 8px 16px;
-    border-radius: 8px;
-
-    &:hover {
-      background-color: #26a64166;
-    }
-  }
+    color: var(--text);
   
-  @media (max-width: 462px){
-    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+
+    &-text {
+      &-title {
+        text-align: center;
+      }
+    }
+
+    &-links {
+      display: flex;
+      justify-content: flex-end;
+
+      gap: 10px;
+
+      &-link {
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+
+        transition: background-color 200ms ease;
+    
+        font-size: 18px;
+        font-weight: 700;
+    
+        background-color: #26a641;
+        color: #e5e5e5;
+    
+        padding: 8px 16px;
+        border-radius: 8px;
+    
+        &:hover {
+          background-color: #006d32;
+        }
+      }
+    }
+    
+    @media (max-width: 462px){
+      flex-direction: row;
+    }
   }
 }

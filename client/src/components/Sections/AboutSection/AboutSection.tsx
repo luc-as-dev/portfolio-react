@@ -28,10 +28,10 @@ const AboutSection = forwardRef<HTMLElement>(({}, ref) => {
       )}
       <JourneyCard className="about-section-journey" />
       <div className="about-section-contact">
+        <ContactMe className="about-section-contact-me" />
         <Card className="about-section-contact-hero">
           <img className="about-section-contact-hero-img" src={HERO_IMAGE} />
         </Card>
-        <ContactMe />
       </div>
     </section>
   );

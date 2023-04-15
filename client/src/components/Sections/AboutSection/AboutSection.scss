@@ -10,11 +10,13 @@
 
   &-contact {
     display: flex;
-    justify-content: start;
-    align-items: end;
     flex-wrap: wrap;    
 
     gap: inherit;
+
+    &-me {
+      flex-grow: 1;
+    }
 
     &-hero {
       flex: 300px 0;
