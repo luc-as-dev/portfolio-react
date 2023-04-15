@@ -1,10 +1,9 @@
 {
   "--bg": "#0a0a0a",
-  "--detail-bg": "#262626bb",
-  "--detail-contrast-bg": "#171717",
-  "--blur-bg": "#40404044",
-
-  "--navbar-blur-bg": "#40404044",
+  "--detail-bg": "#171717cc",
+  "--detail-contrast-bg": "#404040",
+  "--blur-bg": "#26262688",
+  "--navbar-blur-bg": "#40404055",
 
   "--text": "#d4d4d4",
   "--text-dimmed": "#737373",
