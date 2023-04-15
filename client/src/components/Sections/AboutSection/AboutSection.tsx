@@ -6,7 +6,7 @@ import JourneyCard from "../../JourneyCard/JourneyCard";
 import ContactMe from "../../ContactMe/ContactMe";
 import { forwardRef } from "react";
 
-import heroImg from "../../../assets/hero-contact.png";
+import HERO_IMAGE from "/images/hero.png";
 
 const AboutSection = forwardRef<HTMLElement>(({}, ref) => {
   return (
@@ -29,7 +29,7 @@ const AboutSection = forwardRef<HTMLElement>(({}, ref) => {
       <JourneyCard className="about-section-journey" />
       <div className="about-section-contact">
         <Card className="about-section-contact-hero">
-          <img className="about-section-contact-hero-img" src={heroImg} />
+          <img className="about-section-contact-hero-img" src={HERO_IMAGE} />
         </Card>
         <ContactMe />
       </div>

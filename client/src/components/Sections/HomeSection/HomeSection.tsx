@@ -3,7 +3,7 @@ import Card from "../../UI/Card/Card";
 import Chip from "../../UI/Chip/Chip";
 import { forwardRef } from "react";
 
-import HERO_IMAGE from "../../../assets/hero-contact.png";
+import HERO_IMAGE from "/images/hero.png";
 import githubIcon from "../../../assets/icons/github.svg";
 import linkedinIcon from "../../../assets/icons/linkedin.svg";
 
