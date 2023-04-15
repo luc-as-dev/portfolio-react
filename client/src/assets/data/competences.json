@@ -1,38 +1,54 @@
 {
   "javascript": {
-    "name": "JavaScript"
+    "name": "JavaScript",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
   },
   "typescript": {
-    "name": "TypeScript"
+    "name": "TypeScript",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
   },
   "python": {
-    "name": "Python"
+    "name": "Python",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
   },
   "html": {
-    "name": "HTML"
+    "name": "HTML",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg"
   },
   "css": {
-    "name": "CSS"
+    "name": "CSS",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg"
   },
   "react": {
-    "name": "React"
+    "name": "React",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
   },
   "next": {
-    "name": "Next.js"
+    "name": "Next.js",
+    "img": "https://seeklogo.com/images/N/next-js-icon-logo-EE302D5DBD-seeklogo.com.png"
   },
   "sass": {
-    "name": "Sass"
+    "name": "Sass",
+    "img": "https://sass-lang.com/assets/img/styleguide/seal-color-aef0354c.png"
   },
   "tailwind": {
-    "name": "Tailwind"
+    "name": "Tailwind",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
   },
   "mongodb": {
-    "name": "MongoDB"
+    "name": "MongoDB",
+    "img": "https://img.icons8.com/color/512/mongodb.png"
+  },
+  "node": {
+    "name": "Node.js",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
   },
   "git": {
-    "name": "Git"
+    "name": "Git",
+    "img": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
   },
   "socketio": {
-    "name": "Socket.io"
+    "name": "Socket.io",
+    "img": "https://socket.io/images/logo.svg"
   }
 }
