@@ -2,11 +2,11 @@ import "./ProjectsSection.scss";
 import SectionHeader from "../../SectionHeader/SectionHeader";
 import ProjectCard from "../../ProjectCard/ProjectCard";
 import { forwardRef } from "react";
-
-import quizMultiplayerGameImg from "../../../assets/projects/quiz-multiplayer-game.png";
-import kanbanImg from "../../../assets/projects/kanban.png";
-import spotifyCloneImg from "../../../assets/projects/spotify-clone.png";
 import FadeInOnScroll from "../../UI/FadeInOnScroll/FadeInOnScroll";
+
+import quizMultiplayerGameImg from "/images/projects/quiz-multiplayer-game.png";
+import kanbanImg from "/images/projects/kanban.png";
+import spotifyCloneImg from "/images/projects/spotify-clone.png";
 
 const ProjectsSection = forwardRef<HTMLElement>(({}, ref) => {
   return (
