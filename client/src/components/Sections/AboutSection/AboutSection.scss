@@ -10,12 +10,13 @@
 
   &-contact {
     display: flex;
-    flex-wrap: wrap;    
+    justify-content: center;
+    flex-wrap: wrap-reverse;
 
     gap: 20px;
 
     &-me {
-      flex-grow: 1;
+      flex: 300px 1;
     }
 
     &-hero {
