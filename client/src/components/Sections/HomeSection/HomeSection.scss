@@ -5,7 +5,8 @@
     
   &-me {
     display: flex;
-    flex-wrap: wrap-reverse;
+    justify-content: center;
+    flex-wrap: wrap;
 
     gap: 20px;
 
