@@ -4,9 +4,7 @@ import ProjectCard from "../../ProjectCard/ProjectCard";
 import { forwardRef } from "react";
 import FadeInOnScroll from "../../UI/FadeInOnScroll/FadeInOnScroll";
 
-import quizMultiplayerGameImg from "/images/projects/quiz-multiplayer-game.png";
-import kanbanImg from "/images/projects/kanban.png";
-import spotifyCloneImg from "/images/projects/spotify-clone.png";
+import projects from "../../../assets/data/projects.json";
 
 const ProjectsSection = forwardRef<HTMLElement>(({}, ref) => {
   return (
@@ -18,33 +16,20 @@ const ProjectsSection = forwardRef<HTMLElement>(({}, ref) => {
         />
       </FadeInOnScroll>
       <div className="projects-section-list">
-        <FadeInOnScroll>
-          <ProjectCard
-            className="projects-section-list-item"
-            imgSrc={quizMultiplayerGameImg}
-            label="Quiz Multiplayer Game"
-            description="A multiplayer quiz game built with React and Socket.io"
-            href="https://quiz-multiplayer-game.netlify.app/"
-          />
-        </FadeInOnScroll>
-        <FadeInOnScroll>
-          <ProjectCard
-            className="projects-section-list-item"
-            imgSrc={kanbanImg}
-            label="Kanban Board"
-            description="A simple kanban board built with React and Sass"
-            href="https://luc-as-dev-kanban-board.netlify.app/"
-          />
-        </FadeInOnScroll>
-        <FadeInOnScroll>
-          <ProjectCard
-            className="projects-section-list-item"
-            imgSrc={spotifyCloneImg}
-            label="Spotify Clone"
-            description="A Spotify clone built with React, Tailwind and Next.js"
-            href=""
-          />
-        </FadeInOnScroll>
+        {projects.map(({ name, description, imgSrc, href, hidden }) => {
+          if (hidden) return "";
+          return (
+            <FadeInOnScroll key={name}>
+              <ProjectCard
+                className="projects-section-list-item"
+                label={name}
+                description={description}
+                imgSrc={imgSrc}
+                href={href}
+              />
+            </FadeInOnScroll>
+          );
+        })}
       </div>
     </section>
   );

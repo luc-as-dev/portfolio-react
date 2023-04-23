@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Quiz Multiplayer Game",
+    "description": "Quiz Multiplayer Game",
+    "imgSrc": "/images/projects/quiz-multiplayer-game.png",
+    "href": "https://quiz-multiplayer-game.netlify.app/",
+    "hidden": false
+  },
+  {
+    "name": "Kanban Board",
+    "description": "A simple kanban board built with React and Sass",
+    "imgSrc": "/images/projects/kanban.png",
+    "href": "https://luc-as-dev-kanban-board.netlify.app/",
+    "hidden": false
+  },
+  {
+    "name": "Spotify Clone",
+    "description": "A Spotify clone built with React, Tailwind and Next.js",
+    "imgSrc": "/images/projects/spotify-clone.png",
+    "href": "",
+    "hidden": true
+  }
+]
