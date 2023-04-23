@@ -1,0 +1,65 @@
+[
+  {
+    "date": "2014",
+    "title": "The beginning of my new passion",
+    "texts": ["I started to learn Java when i was 15 years old."],
+    "hidden": false
+  },
+  {
+    "date": "2015",
+    "title": "Mixing code with electricity",
+    "texts": [
+      "I went to a intro course once a week and learned the basic of Arduino, C++."
+    ],
+    "hidden": false
+  },
+  {
+    "date": "2015",
+    "title": "Started to see the world in 3D",
+    "texts": [
+      "My desire to create games led me to start learning Unity3D and C#."
+    ],
+    "hidden": false
+  },
+  {
+    "date": "2015 - 2018",
+    "title": "Every good story needs a snake",
+    "texts": [
+      "Went to Möckeln gymnasiet (Teknikprogrammet) and enhanced my math and programming (Python)."
+    ],
+    "hidden": false
+  },
+  {
+    "date": "2019",
+    "title": "University",
+    "texts": [
+      "Went to Örebro University and dropped out 6 months in.",
+      "Enhanced my math and was introduced to matrices, MATHLAB and C."
+    ],
+    "hidden": false
+  },
+  {
+    "date": "2020-2022",
+    "title": "A brake from all the code",
+    "texts": [
+      "Work and spend most of my free time in the workshop, tuning cars and building audio system."
+    ],
+    "hidden": false
+  },
+  {
+    "date": "2022-2023",
+    "title": "Brake is over, I'm going to work as a developer",
+    "texts": [
+      "Found out about Techover and joined their bootcamp, finished in April"
+    ],
+    "hidden": false
+  },
+  {
+    "date": "2023",
+    "title": "First time working as a developer",
+    "texts": [
+      "I am currently working on a project that is estimated to be finished this summer."
+    ],
+    "hidden": false
+  }
+]
