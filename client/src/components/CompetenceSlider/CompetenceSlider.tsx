@@ -59,7 +59,7 @@ export default function CompetenceSlider({ perView, className }: Props) {
       ]}
     >
       {Object.values(competences).map(({ name, img }) => (
-        <CompetenceIcon label={name} src={img} />
+        <CompetenceIcon key={name} label={name} src={img} />
       ))}
     </SliderCard>
   );

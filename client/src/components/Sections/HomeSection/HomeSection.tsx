@@ -54,7 +54,7 @@ const HomeSection = forwardRef<HTMLElement>(({}, ref) => {
           classNameInner="home-section-chips-inner"
         >
           {Object.values(competences).map(({ name }) => (
-            <Chip name={name} />
+            <Chip key={name} name={name} />
           ))}
         </Card>
       </FadeInOnScroll>
