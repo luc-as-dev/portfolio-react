@@ -1,9 +1,7 @@
 .contact-me {
   &-inner {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    flex-wrap: wrap;
 
     color: var(--text);
   
@@ -11,10 +9,15 @@
     padding: 20px;
 
     &-text {
+      flex: 1;
+      
+      border-right: 1px solid var(--text-dimmed);
+
+      padding: 10px;
+
       &-title {
         text-align: center;
-
-        padding-bottom: 8px;
+        margin-bottom: 8px;
       }
 
       &-info {
@@ -26,6 +29,7 @@
 
     &-links {
       display: flex;
+      flex-direction: column;
       justify-content: flex-end;
 
       gap: 10px;
