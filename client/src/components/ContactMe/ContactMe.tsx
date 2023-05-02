@@ -15,9 +15,8 @@ export default function ContactMe({ className }: Props) {
         <h2 className="contact-me-inner-text-title">Contact me</h2>
         <p className="contact-me-inner-text-info">
           Interested in what I can offer as a developer? Whether you're a
-          potential client or employer, I'm always happy to connect. Feel free
-          to reach out via the contact information below to start a
-          conversation.
+          potential client or employer, I'm always happy to connect. You can
+          reach me using the information on the left.
         </p>
       </div>
       <div className="contact-me-inner-links">
