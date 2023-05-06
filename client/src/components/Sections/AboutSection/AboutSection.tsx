@@ -6,7 +6,7 @@ import JourneyCard from "../../JourneyCard/JourneyCard";
 import ContactMe from "../../ContactMe/ContactMe";
 import { forwardRef } from "react";
 
-import HERO_IMAGE from "/images/hero.png";
+import HERO_IMAGE from "/images/hero-color-800.png";
 import FadeInOnScroll from "../../UI/FadeInOnScroll/FadeInOnScroll";
 
 const AboutSection = forwardRef<HTMLElement>(({}, ref) => {
